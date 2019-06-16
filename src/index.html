@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>乐物优购</title>
+    <link href="./front/css/index.css" rel="stylesheet" />
+    <link href="./front/css/normalize.css" rel="stylesheet" />
+    <link href="./front/css/reset.css" rel="stylesheet" />
+    <link href="./front/css/iconfont.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- navTop部分 -->
+    <div class="navTop clearfix">
+        <div class="container">
+            <div class="navTop-left">
+                <ul>
+                    <li> <a href="#" target="_blank">用户登录</a></li>
+                    <li> <a href="#" target="_blank">免费登录</a></li>
+                    <li>
+                        <a href="https://graph.qq.com/oauth2.0/show?which=Login&display=pc&response_type=code&client_id=100279011&redirect_uri=http://club.qqku.com/index.do&state=8e64151568c38e81139df56325eee7fc&scope=get_user_info"
+                            target="_blank">
+                            <i class="iconfont icon-qq2"></i>
+                            <span>qq登录</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://api.weibo.com/oauth2/authorize?client_id=3619957868&redirect_uri=http%3A%2F%2Fclub.qqku.com%2F%3Ftab%3Dwblogin%26op%3Dback%26r%3Dhttp%253A%252F%252F477681069.qqku.com%26h%3D477681069&response_type=code"
+                            target="_blank">
+                            <i class="iconfont icon-weibo2"></i>
+                            <span>微博登录</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navTop-right">
+                <ul>
+                    <li><a href="#" target="_blank" title="将本站设为首页">设为首页</a></li>
+                    <li><a href="#" target="_blank" title="加入收藏，方便下次打开">加入收藏</a></li>
+                    <li><a href="#" target="_blank" title="联系我帮你解答">遇到购物问题？联系我></a></a></li>
+                    <li><a href="#" target="_blank" title="乐购信息">我的乐购
+                            <ul class="li4">
+                                <li>我的订单</li>
+                                <li>我的收藏</li>
+                                <li>抵用卷</li>
+                                <li>账户设置</li>
+                            </ul>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- headNav部分 -->
+    <div class="headNav clearfix">
+        <div class="container">
+            <div class="headNav-left">
+                <img src="./img/1_01.gif" alt="网络出了会问题" title="购物导航" />
+            </div>
+            <div class="headNav-center">
+                <div class="search">
+                    <input type="text" placeholder="好宝贝，等你搜" id="text1" name="text1" />
+                    <button type="text" id="btn1">搜索</button>
+                    <ul id="list">
+                        <!-- <li></li>
+                        <li></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="headNav-right">
+                <dl>
+                    <dt></dt>
+                </dl>
+                <dl>
+                    <dt></dt>
+                </dl>
+                <dl>
+                    <dt></dt>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- banerNav部分 -->
+    <div class="banerNav clearfix">
+        <div class="container">
+            <ul class="banerNav-ul">
+                <li><a href="#" target="_blank"><i class="iconfont icon-daohang"></i>网站首页</a></li>
+                <li><a href="#" target="_blank">领劵优惠直播</a></li>
+                <li><a href="#" target="_blank">实时跑量</a></li>
+                <li><a href="#" target="_blank">超级人气榜</a></li>
+                <li><a href="#" target="_blank">9块9包邮</a></li>
+                <li><a href="#" target="_blank">20元封顶</a></li>
+                <li><a href="#" target="_blank">钜惠卷</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- main部分 -->
+    <div class="main clearfix">
+        <div class="container">
+            <!-- main-banner部分 -->
+            <div class="main-banner">
+                <!-- main-banner-left部分 -->
+                <div class="main-banner-left">
+                    <ul>
+                        <li>
+                            <span><i class="iconfont icon-fuzhuangshichang"></i>服装</span>
+                            <span><i class="iconfont icon-jiantou5"></i></span>
+                            <div class="merge1">
+                                <p>
+                                    <span>服装</span>
+                                    <span>更多<i class="iconfont icon-jiantou3"></i></span>
+                                </p>
+                                <p>
+                                    <hr />
+                                </p>
+                                <ul>
+                                    <li>当季热卖</li>
+                                    <li>新品推荐</li>
+                                    <li>T桖</li>
+                                    <li>衬衫</li>
+                                    <li>POLO衫</li>
+                                    <li>牛仔裤</li>
+                                    <li>休闲裤</li>
+                                    <li>连衣裙</li>
+                                    <li>雪纺衫</li>
+                                    <li>短裤</li>
+                                    <li>短外套</li>
+                                    <li>风衣</li>
+                                    <li>西服装</li>
+                                    <li>吊带/背心</li>
+                                    <li>毛妮大衣</li>
+                                    <li>运动裤</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span><i class="iconfont icon-muyingleimu"></i>母婴</span>
+                            <span><i class="iconfont icon-jiantou5"></i></span>
+                            <div class="merge2">
+                                <p>
+                                    <span>母婴</span>
+                                    <span>更多<i class="iconfont icon-jiantou3"></i></span>
+                                </p>
+                                <p>
+                                    <hr />
+                                </p>
+                                <ul>
+                                    <li>奶瓶奶嘴</li>
+                                    <li>儿童餐具</li>
+                                    <li>水壶/水杯</li>
+                                    <li>宝宝护肤</li>
+                                    <li>日常护理</li>
+                                    <li>睡袋/抱被</li>
+                                    <li>婴儿枕</li>
+                                    <li>婴儿床</li>
+                                    <li>安全座椅</li>
+                                    <li>学步车</li>
+                                    <li>益智玩具</li>
+                                    <li>毛绒玩具</li>
+                                    <li>滑板车</li>
+                                    <li>纸尿裤</li>
+                                    <li>积木拼装</li>
+                                    <li>动漫玩具</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span><i class="iconfont icon-huazhuangpin1"></i>化妆品</span>
+                            <span><i class="iconfont icon-jiantou5"></i></span>
+                            <div class="merge3">
+                                <p>
+                                    <span>化妆品</span>
+                                    <span>更多<i class="iconfont icon-jiantou3"></i></span>
+                                </p>
+                                <p>
+                                    <hr />
+                                </p>
+                                <ul>
+                                    <li>美白</li>
+                                    <li>防晒</li>
+                                    <li>面膜</li>
+                                    <li>洁面</li>
+                                    <li>爽肤水</li>
+                                    <li>精华</li>
+                                    <li>眼霜</li>
+                                    <li>乳液/面霜</li>
+                                    <li>隔离</li>
+                                    <li>遮瑕</li>
+                                    <li>气垫BB</li>
+                                    <li>口红</li>
+                                    <li>眼影</li>
+                                    <li>眼线</li>
+                                    <li>眉笔/眉粉</li>
+                                    <li>散粉</li>
+                                    <li>女士彩妆</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span><i class="iconfont icon-jujia"></i>居家、日用</span>
+                            <span><i class="iconfont icon-jiantou5"></i></span>
+                            <div class="merge4">
+                                <p>
+                                    <span>居家、日用</span>
+                                    <span>更多<i class="iconfont icon-jiantou3"></i></span>
+                                </p>
+                                <p>
+                                    <hr />
+                                </p>
+                                <ul>
+                                    <li>被子</li>
+                                    <li>枕芯</li>
+                                    <li>四件套</li>
+                                    <li>床垫/床褥</li>
+                                    <li>枕巾/枕套</li>
+                                    <li>收纳用品</li>
+                                    <li>雨伞雨具</li>
+                                    <li>清洁工具</li>
+                                    <li>储物</li>
+                                    <li>办公家具</li>
+                                    <li>电脑桌</li>
+                                    <li>书架</li>
+                                    <li>书柜</li>
+                                    <li>蚕丝被</li>
+                                    <li>乳胶枕</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span><i class="iconfont icon-xiebaopeishileimufill"></i>鞋包、配饰</span>
+                            <span><i class="iconfont icon-jiantou5"></i></span>
+                            <div class="merge5">
+                                <p>
+                                    <span>鞋包、配饰</span>
+                                    <span>更多<i class="iconfont icon-jiantou3"></i></span>
+                                </p>
+                                <p>
+                                    <hr />
+                                </p>
+                                <ul>
+                                    <li>新品推荐</li>
+                                    <li>休闲鞋</li>
+                                    <li>凉鞋</li>
+                                    <li>正装鞋</li>
+                                    <li>帆布鞋</li>
+                                    <li>功能鞋</li>
+                                    <li>增高鞋</li>
+                                    <li>跑步鞋</li>
+                                    <li>男靴</li>
+                                    <li>足球鞋</li>
+                                    <li>板鞋</li>
+                                    <li>运动配饰</li>
+                                    <li>运动背心</li>
+                                    <li>背包</li>
+                                    <li>训练鞋</li>
+                                    <li>LV包包</li>
+                                    <li>行李箱</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span><i class="iconfont icon-meishi"></i>美食</span>
+                            <span><i class="iconfont icon-jiantou5"></i></span>
+                            <div class="merge6">
+                                <p>
+                                    <span>美食</span>
+                                    <span>更多<i class="iconfont icon-jiantou3"></i></span>
+                                </p>
+                                <p>
+                                    <hr />
+                                </p>
+                                <ul>
+                                    <li>牛奶</li>
+                                    <li>饼干蛋糕</li>
+                                    <li>零食</li>
+                                    <li>糖/巧克力</li>
+                                    <li>水</li>
+                                    <li>饮料</li>
+                                    <li>方便食品</li>
+                                    <li>苹果</li>
+                                    <li>橙子</li>
+                                    <li>火龙果</li>
+                                    <li>芒果</li>
+                                    <li>车厘子</li>
+                                    <li>椰子</li>
+                                    <li>水饺/汤圆</li>
+                                    <li>面点</li>
+                                    <li>冰淇淋</li>
+                                    <li>奶酪/黄油</li>
+                                    <li>烘焙半成品</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span><i class="iconfont icon-qiche"></i>文体、车品</span>
+                            <span><i class="iconfont icon-jiantou5"></i></span>
+                            <div class="merge7">
+                                <p>
+                                    <span>文体、车品</span>
+                                    <span>更多<i class="iconfont icon-jiantou3"></i></span>
+                                </p>
+                                <p>
+                                    <hr />
+                                </p>
+                                <ul>
+                                    <li>笔类</li>
+                                    <li>办公文具</li>
+                                    <li>本册/便签</li>
+                                    <li>文件收纳</li>
+                                    <li>学生文具</li>
+                                    <li>多功能一体机</li>
+                                    <li>打印机</li>
+                                    <li>传真设备</li>
+                                    <li>扫描设备</li>
+                                    <li>杂志期刊</li>
+                                    <li>市场营销</li>
+                                    <li>计算机互联网</li>
+                                    <li>社会科学</li>
+                                    <li>教辅资料</li>
+                                    <li>中小学教学</li>
+                                    <li>行车记录仪</li>
+                                    <li>车载导航</li>
+                                    <li>车载蓝牙</li>
+                                    <li>车载生活电器</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span><i class="iconfont icon-shumaxiangji"></i>数码、家电</span>
+                            <span><i class="iconfont icon-jiantou5"></i></span>
+                            <div class="merge8">
+                                <p>
+                                    <span>数码、家电</span>
+                                    <span>更多<i class="iconfont icon-jiantou3"></i></span>
+                                </p>
+                                <p>
+                                    <hr />
+                                </p>
+                                <ul>
+                                    <li>手机</li>
+                                    <li>游戏手机</li>
+                                    <li>老人机</li>
+                                    <li>数码相机</li>
+                                    <li>单反相机</li>
+                                    <li>拍立得</li>
+                                    <li>运动相机</li>
+                                    <li>存储卡</li>
+                                    <li>智能手环</li>
+                                    <li>智能手表</li>
+                                    <li>耳机/耳麦</li>
+                                    <li>音响/音箱</li>
+                                    <li>智能家居</li>
+                                    <li>超薄电视</li>
+                                    <li>曲面电视</li>
+                                    <li>空调挂机</li>
+                                    <li>中央空调</li>
+                                    <li>变频空调</li>
+                                    <li>滚筒洗衣机</li>
+                                    <li>集成灶</li>
+                                    <li>燃气热水器</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- main-banner-center部分 -->
+                <div class="main-banner-center" id="main-banner-center">
+                    <div class="list1" id="list1" >
+                        <img src="./img/2_05.jpg" alt="1"/>
+                        <img src="./img/2_01.jpg" alt="1" />
+                        <img src="./img/2_02.jpg" alt="2" />
+                        <img src="./img/2_03.jpg" alt="3" />
+                        <img src="./img/2_04.jpg" alt="4" />
+                        <img src="./img/2_05.jpg" alt="5" />
+                        <img src="./img/2_01.jpg" alt="5" />
+                    </div>
+                    <div class="buttons1" id="buttons1">
+                        <span index="1" class="on"></span>
+                        <span index="2"></span>
+                        <span index="3"></span>
+                        <span index="4"></span>
+                        <span index="5"></span>
+                    </div>
+                    <a href="javascript:;" id="prev1" class="arrow1">&lt;</a>
+                    <a href="javascript:;" id="next1" class="arrow1">&gt;</a>
+                </div>
+
+                <div class="main-banner-right">
+                    <div class="main-banner-rightOne">
+                        <p>“亲亲，喜欢我们吗”</p>
+                        <p>分享给身边的朋友一起抢优惠</p>
+                            <ul>
+                                <li><i class="iconfont icon-tianjia2"></i></li>
+                                <li><i class="iconfont icon-weibo1"></i></li>
+                                <li><i class="iconfont icon-qqkongjian"></i></li>
+                                <li><i class="iconfont icon-weixin2"></i></li>
+                                <li><i class="iconfont icon-qq"></i></li>
+                            </ul>
+                    </div>
+                    <div class="main-banner-rightTwo">
+                        <p>实时销量榜</p>
+                        <p>免费领万千优惠卷</p>
+                        <p><i class="iconfont icon-bofang"></i></p>
+                        <!-- <img src="./img/2_08.jpg" alt="网络出了会问题" title="抢购"/> -->
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- main-mess1部分 -->
+            <div class="main-mess1">
+                <div class="main-mess1-one">
+                    <span>欢迎光临乐物优购返利商城 http://477681069.qqku.com/ &nbsp;&nbsp;&nbsp;&nbsp;  提示：超级单品和好物推荐可以进入购物详情页</span>
+                </div>
+                <div class="main-mess1-two">
+                    <span>注册会员，既优惠又可以哦！买的东西全是商铺正品，请放心购买！！不买可以收藏下本站哦！谢谢光临！亲们，请重新注册帐号哦~~</span>
+                </div>
+            </div>
+
+
+
+            <!-- main-rush部分 -->
+            <div class="main-rush">
+                <ul>
+                    <li>
+                        <p>超级单品</p>
+                        <p>
+                           <span>限时</span>
+                           <span>限量</span>
+                           <span>品质</span>
+                           <span>超值</span>
+                        </p>
+                        <p>
+                            <i class="iconfont icon-ai254"></i>
+                            <span>距离结束仅剩</span>
+                        </p>
+                        <p>
+                            <span id="leftTime"></span>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="http://omsproductionimg.yangkeduo.com/images/2017-09-15/5551e7fd201a22a25d48549155907de0.jpeg"/>
+                        <p class="rush-go1">洁丽雅儿童毛巾</p>
+                        <p class="rush-go2">
+                            <span class="rush-go4">￥2480</span>
+                            <span class="rush-go3"><del>4800</del></span>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="http://omsproductionimg.yangkeduo.com/images/2017-05-31/3432e4f0fe1effc4abca85d11a085fc2.jpeg"/>
+                        <p class="rush-go1">金号纯棉毛巾</p>
+                        <p class="rush-go2">
+                            <span class="rush-go4">￥2890</span>
+                            <span class="rush-go3"><del>3901</del></span>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="https://t00img.yangkeduo.com/goods/images/2019-04-07/0cfde9d7-368e-403d-baa3-15ed55854998.jpg"/>
+                        <p class="rush-go1">洁丽雅纯棉小毛巾</p>
+                        <p class="rush-go2">
+                            <span class="rush-go4">￥2380</span>
+                            <span class="rush-go3"><del>9900</del></span>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="http://omsproductionimg.yangkeduo.com/images/2017-08-15/7bc0b1dfdebba8824356efbe1588da0a.jpeg"/>
+                        <p class="rush-go1">洁丽雅竹纤维毛巾</p>
+                        <p class="rush-go2">
+                            <span class="rush-go4">￥5990</span>
+                            <span class="rush-go3"><del>8800</del></span>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <!-- share 分享部分 -->
+           <!--  <div class="share1" id="share1">
+                <div class="share2" id="share2">
+                </div>
+            </div> -->
+
+
+            <!-- returnTop 返回顶部 -->
+            <div class="returnTop" id="returnTop">
+                <img src="./img/2_09.jpg" alt="返回顶部" title="返回顶部"/>
+                <!-- <p>返回顶部</p> -->
+            </div>
+
+
+
+            <!-- main-PreferredBrandMessage部分 -->
+            <div class="main-PreferredBrandMessage">
+                <p>优选品牌</p>
+            </div>
+
+            <!-- main-PreferredBrand 部分 -->
+            <div class="main-PreferredBrand">
+                <div class="PreferredBrand1">
+                    <ul>
+                        <li><img src="./img/3_01.jpg" alt=""/></li>
+                        <li><img src="./img/3_02.jpg" alt=""/></li>
+                        <li><img src="./img/3_03.jpg" alt=""/></li>
+                    </ul>
+                </div>
+                <dic class="PreferredBrand2">
+                    <ul>
+                        <li><img src="./img/4_01.jpg" alt=""/></li>
+                        <li><img src="./img/4_02.jpg" alt=""/></li>
+                        <li><img src="./img/4_03.jpg" alt=""/></li>
+                        <li><img src="./img/4_04.jpg" alt=""/></li>
+                        <li><img src="./img/4_05.jpg" alt=""/></li>
+                        <li><img src="./img/4_06.jpg" alt=""/></li>
+                        <li><img src="./img/4_07.jpg" alt=""/></li>
+                        <li><img src="./img/4_08.jpg" alt=""/></li>
+                        <li><img src="./img/4_09.jpg" alt=""/></li>
+                        <li><img src="./img/4_10.jpg" alt=""/></li>
+                        <li><img src="./img/4_11.jpg" alt=""/></li>
+                        <li><img src="./img/4_12.jpg" alt=""/></li>
+                        <li><img src="./img/4_13.jpg" alt=""/></li>
+                        <li><img src="./img/4_14.jpg" alt=""/></li>
+                        <li><img src="./img/4_15.jpg" alt=""/></li>
+                        <li><img src="./img/4_08.jpg" alt=""/></li>
+                        <li><img src="./img/4_10.jpg" alt=""/></li>
+                        <li><img src="./img/4_06.jpg" alt=""/></li>
+                    </ul>
+                </dic>
+            </div>
+
+
+
+            <!-- .main-tabMessage部分 -->
+            <div class="main-tabMessage">
+                <p>手机数码</p>
+            </div>
+
+
+            <!-- main-tab部分 -->
+            <div class="main-tab">
+                <div class="main-tabTop" id="main-tabTop">
+                    <!-- <span>手机数码</span> -->
+                    <ul>
+                        <li class="act">优质大牌</li>
+                        <li>时尚新品</li>
+                        <li>精选单品</li>
+                    </ul>
+                </div>
+                <div class="main-tabBottom" id="main-tabBottom">
+                    <section class="tab">
+                        <ul>
+                            <li>
+                               <img src="./img/5_01.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_02.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_03.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_04.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_05.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_06.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_07.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_08.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_09.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_10.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_11.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_12.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="tab">
+                        <ul>
+                            <li>
+                                <img src="./img/5_13.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_14.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_15.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_16.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_17.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_18.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_19.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_20.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_21.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_22.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_23.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_24.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="tab">
+                        <ul>
+                            <li>
+                                <img src="./img/5_25.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_26.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_27.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_28.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_29.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_30.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_31.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_32.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_33.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_34.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_35.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_36.jpg" alt=""/>
+                               <p>Oppo Reno 6 128G 星云紫</p> 
+                               <p>￥2799</p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+
+
+
+
+            <!-- main-CharacteristicRecommendationMessage部分 -->
+            <div class="main-CharacteristicRecommendationMessage">
+                <p>好物推荐</p>
+            </div>
+
+
+            <!-- main-CharacteristicRecommendation部分 -->
+            <div class="main-CharacteristicRecommendation">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- footer部分 -->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-Top"></div>
+
+
+
+
+        </div>
+    </div>
+
+
+</body>
+<script src="./front/js/index.js"></script>
+
+</html>
