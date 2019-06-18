@@ -70,6 +70,34 @@ function fn(data) {
 
 
 
+/* 
+*  用户状态判断  
+*/
+
+let usernameLo = localStorage.getItem("username");
+let passwordLo = localStorage.getItem("password");
+
+let userStatus = document.getElementById("userStatus");
+let userLogout = document.getElementById("userLogout");
+
+if(usernameLo !== null &&  passwordLo !== null){
+
+    userStatus.innerHTML = usernameLo+"已登录";
+    userLogout.innerHTML = "点击注销";
+    userLogout.style.color = "#27c0ab";
+
+    userLogout.onclick = function(){
+
+        confirm("确认要注销吗？");
+
+        localStorage.removeItem("username");    
+        localStorage.removeItem("password");
+
+        alert("注销成功！");
+    }
+}
+
+
 
 
 
@@ -109,15 +137,20 @@ function play() {
         next1.onclick();
     }, 500)
 }
+/* function play(){
+    timer = setInterval(function(){
+        prev1.onclick()
+    },800)
+} */
 play();
 
-var container = document.getElementById("main-banner-center");
+var containerBc = document.getElementById("main-banner-center");
 
 function stop() {
     clearInterval(timer);
 }
-container.onmouseover = stop;
-container.onmouseout = play;
+containerBc.onmouseover = stop;
+containerBc.onmouseout = play;
 
 
 
@@ -169,6 +202,370 @@ for (var i = 0; i < buttons1.length; i++) {
 
 
 
+/* 
+var i=0;
+var Timer;
+
+//轮播部分
+function TimerBanner(){
+    Timer = setInterval(function(){
+        i++;
+        if(i==5){
+            i=0;
+        }
+        showPic()
+    },1000);
+}
+//显示图片
+function showPic(){
+    $(".picImg").eq(i).show().siblings().hide();
+    $(".tabs li").eq(i).addClass("bg").siblings().removeClass("bg");
+}
+
+
+
+$(function(){
+    $(".picImg").eq(0).show().siblings().hide();   //默认第一张图片显示，其他的隐藏
+    //自动轮播
+    TimerBanner();
+
+    //点击红圈
+
+    $(".tabs li").hover(function(){  //鼠标移动上去
+        clearInterval(Timer); //让计时器暂时停止   清除计时器
+        i=$(this).index();   //获取该圈的索引
+        showPic();           //调用显示图片的方法，显示该索引对应的图片
+    },function(){  //鼠标离开
+        TimerBanner();    //继续轮播   计时器开始
+    });
+
+    //点击左右按钮
+    $(".btn1").click(function(){
+        clearInterval(Timer);
+        i--;   //往左
+        if(i==-1){
+            i=4;
+        }
+        showPic();
+        TimerBanner();
+    });
+    $(".btn2").click(function(){
+        clearInterval(Timer);
+        i++;   //往右
+        if(i==5){
+            i=0;
+        }
+        showPic();
+        TimerBanner();
+    });
+});
+
+ */
+
+
+
+/* $(function () {
+    var $container = $('#main-banner-center')
+    var $list = $('#list1')
+    var $points = $('#pointsDiv>span')
+    var $prev = $('#prev')
+    var $next = $('#next')
+    var TIME = 400 // 移动的总时间
+    var ITEM_TIME = 20 //单元移动的间隔时间
+    var PAGE_WIDTH = 700 // 一页的宽度
+    var imgCount = $points.length //图片的数量
+    var index = 0 //当前圆点的下标
+    var moving = false //是否正在翻页中
+  
+  
+    // 1. 点击向右(左)的图标, 平滑切换到下(上)一页
+    $next.click(function () {
+      nextPage(true)
+    })
+    $prev.click(function () {
+      nextPage(false)
+    })
+  
+    // 3. 每隔3s自动滑动到下一页
+    var intervalId = setInterval(function () {
+      nextPage(true)
+    }, 1000)
+  
+    // 4. 当鼠标进入图片区域时, 自动切换停止, 当鼠标离开后,又开始自动切换
+    $container.hover(function () {
+      clearInterval(intervalId)
+    }, function () {
+      intervalId = setInterval(function () {
+        nextPage(true)
+      }, 1000)
+    })
+  
+    // 6. 点击圆点图标切换到对应的页
+    $points.click(function () {
+      var targetIndex = $(this).index()
+      if(targetIndex!=index) {
+        nextPage(targetIndex)
+      }
+    })
+  
+    
+    function nextPage (next) {
+      
+      // 如果正在翻页, 此次翻页请求不执行
+      if(moving) {
+        return
+      }
+      moving = true // 标识正在翻页中
+  
+      var offset = 0 //移动的总距离
+      // 计算offset
+      if(typeof next==='boolean') {
+        offset = next ? -PAGE_WIDTH : PAGE_WIDTH
+      } else {
+        offset = -PAGE_WIDTH * (next - index)
+      }
+  
+      // 计算单元移动的距离
+      var itemOffset = offset/(TIME/ITEM_TIME)
+      // 当前的left
+      var currLeft = $list.position().left
+      // 目标的left
+      var targetLeft = currLeft + offset
+      // 启动循环定时器不断移动, 到达目标位置时清除定时器
+      var intervalId = setInterval(function () {
+        // 计算当前要设置的left
+        currLeft += itemOffset
+        if(currLeft===targetLeft) {
+          //清除定时器
+          clearInterval(intervalId)
+          //标识翻页完成
+          moving = false
+  
+          // 如果滑动到了最左边的图片, 直接跳转到最右边的第2张图片
+          if(currLeft===0) {
+            currLeft = -PAGE_WIDTH * imgCount
+          } else if(currLeft===-PAGE_WIDTH*(imgCount+1)) {
+            // 如果滑动到了最右边的图片, 直接跳转到最左边的第2张图片
+            currLeft = -PAGE_WIDTH
+          }
+        }
+        // 更新$list的left样式
+        $list.css({
+          left: currLeft
+        })
+      }, ITEM_TIME)
+  
+      // 5. 切换页面时, 下面的圆点也同步更新
+      updatePoints(next)
+    }
+  
+  
+    function updatePoints (next) {
+      var targetIndex = 0
+      // 计算目标下标
+      if(typeof next==='boolean') {
+        if(next) {
+          targetIndex = index + 1
+          if(targetIndex===imgCount) {
+            targetIndex = 0
+          }
+        } else {
+          targetIndex = index-1
+          if(targetIndex===-1) {
+            targetIndex = imgCount-1
+          }
+        }
+      } else {
+        targetIndex = next
+      }
+      // 移除当前下标元素的class
+      $points[index].className = ''
+      // 给目标下标的元素指定class
+      $points[targetIndex].className = 'on'
+      //更新当前下标
+      index = targetIndex
+    }
+  }) */
+
+
+
+/* 
+  carousel(
+    //必选， 要轮播模块(id/class/tagname均可)，必须为jQuery元素
+    $(".demo1"),
+    {
+        //可选，默认左右(leftright) - 'leftright' / 'updown' / 'fade' (左右/上下/渐隐渐现)
+        type:"leftright",
+        //可选，默认一直显示 - 'move' / 'none'   (鼠标移上显示 / 不显示 )
+        arrowtype:"move",
+        //可选，默认true - true / false (开启轮播/关闭轮播)
+        autoplay:true,
+        //可选，默认3000
+        time:3000
+    }
+);
+ */
+
+  /* 
+  *  jQuery 实现轮播图的封装
+  */
+  /* (function(window, factory){
+
+    var carousel = function(carouselWrap, parameter){
+        return new carousel.fn.init(carouselWrap , parameter);
+    }
+    carousel.fn = carousel.prototype = {
+        constructor: carousel,
+        ind: 0,
+        prev: function(parameter, pb_carousel, pb_carousel_ind, len){
+            if(parameter.type == 'fade'){
+                pb_carousel.eq(this.ind).fadeOut(300);
+                if(this.ind == 0) pb_carousel.eq(len - 1).fadeIn(300);
+                else pb_carousel.eq(this.ind).prev().fadeIn(300);
+                this.ind--;
+                if(this.ind < 0) this.ind=len-1;
+                this.carousel_ind(pb_carousel_ind);
+            }else if(parameter.type == 'updown'){
+                pb_carousel.eq(this.ind).animate({'top': "100%"},300);
+                if(this.ind == 0) pb_carousel.eq(len - 1).css('top', '-100%').show().animate({'top':0},300);
+                else pb_carousel.eq(this.ind).prev().css('top', '-100%').show().animate({'top':0},300);
+                this.ind--;
+                if(this.ind < 0) this.ind=len-1;
+                this.carousel_ind(pb_carousel_ind);
+            }else if(parameter.type == 'leftright' || parameter.type == undefined){
+                pb_carousel.eq(this.ind).animate({'left': "100%"},300);
+                if(this.ind == 0) pb_carousel.eq(len - 1).css('left', '-100%').show().animate({'left':0},300);
+                else pb_carousel.eq(this.ind).prev().css('left', '-100%').show().animate({'left':0},300);
+                this.ind--;
+                if(this.ind < 0) this.ind=len-1;
+                this.carousel_ind(pb_carousel_ind);
+            }
+        },
+        next: function(parameter, pb_carousel, pb_carousel_ind, len){
+            if(parameter.type == 'fade'){
+                pb_carousel.eq(this.ind).fadeOut(300);
+                if(this.ind == len-1) pb_carousel.eq(0).fadeIn(300);
+                pb_carousel.eq(this.ind).next().fadeIn(300);
+                this.ind++;
+                if(this.ind > len-1) this.ind = 0;
+                this.carousel_ind(pb_carousel_ind);
+            }else if(parameter.type == 'updown'){
+                pb_carousel.eq(this.ind).animate({'top': "-100%"},300);
+                if(this.ind == len-1) pb_carousel.eq(0).css('top', '100%').show().animate({'top':0},300);
+                pb_carousel.eq(this.ind).next().css('top', '100%').show().animate({'top':0},300);
+                this.ind++;
+                if(this.ind > len-1) this.ind = 0;
+                this.carousel_ind(pb_carousel_ind);
+            }else if(parameter.type == 'leftright' || parameter.type == undefined){
+                pb_carousel.eq(this.ind).animate({'left': "-100%"},300);
+                if(this.ind == len-1) pb_carousel.eq(0).css('left', '100%').show().animate({'left':0},300);
+                pb_carousel.eq(this.ind).next().css('left', '100%').show().animate({'left':0},300);
+                this.ind++;
+                if(this.ind > len-1) this.ind = 0;
+                this.carousel_ind(pb_carousel_ind);
+            }
+        },
+        carousel_ind: function(pb_carousel_ind){
+            pb_carousel_ind.each(function(){
+                $(this).removeClass('pb-this');
+            })
+            pb_carousel_ind.eq(this.ind).addClass('pb-this');
+        },
+        click: function(carouselWrap, parameter){
+            var _this = this,
+                len = carouselWrap.children('.pb-carousel').children().length,
+                pb_carousel = carouselWrap.children('.pb-carousel').children(),
+                pb_carousel_ind = carouselWrap.children('.pb-carousel-ind').children();
+            carouselWrap.children('.pb-arrow-prev').click(function(){
+                _this.prev(parameter, pb_carousel, pb_carousel_ind, len);
+            });
+            carouselWrap.children('.pb-arrow-next').click(function(){
+                _this.next(parameter, pb_carousel, pb_carousel_ind, len);
+            });
+            pb_carousel_ind.click(function(){
+                if($(this).index() != _this.ind){
+                    if(parameter.type == 'fade'){
+                        pb_carousel.eq(_this.ind).fadeOut(300);
+                        _this.ind = $(this).index();
+                        pb_carousel.eq(_this.ind).fadeIn(300);
+                    }else if(parameter.type == 'updown'){
+                        pb_carousel.eq(_this.ind).animate({'top': "-100%"},300);
+                        _this.ind = $(this).index();
+                        pb_carousel.eq(_this.ind).css('top', '100%').show().animate({'top':0},300);
+                    }else if(parameter.type == 'leftright' || parameter.type == undefined){
+                        pb_carousel.eq(_this.ind).animate({'left': "-100%"},300);
+                        _this.ind = $(this).index();
+                        pb_carousel.eq(_this.ind).css('left', '100%').show().animate({'left':0},300);
+                    }
+                }
+                _this.carousel_ind(pb_carousel_ind);
+            })
+        },
+        autoPlay: function(carouselWrap, parameter){    
+            var _this = this,
+                time = parameter.time || 3000,
+                len = carouselWrap.children('.pb-carousel').children().length,
+                pb_carousel = carouselWrap.children('.pb-carousel').children(),
+                pb_carousel_ind = carouselWrap.children('.pb-carousel-ind').children(),
+                timer = setInterval(function(){
+                    _this.next(parameter, pb_carousel, pb_carousel_ind, len);
+            }, time);
+            carouselWrap.on('mouseover', function(){
+                clearInterval(timer)
+            });
+            carouselWrap.on('mouseout', function(){
+                timer = setInterval(function(){
+                    _this.next(parameter, pb_carousel, pb_carousel_ind, len);
+                }, time);
+            });
+        },
+        arrow: function(carouselWrap, parameter){
+            if(parameter.arrowtype == 'move'){
+                carouselWrap.on('mouseenter', function(){
+                    $(this).children('.pb-arrow-prev').fadeIn();
+                });
+                carouselWrap.on('mouseleave', function(){
+                    $(this).children('.pb-arrow-prev').fadeOut();
+                });
+                carouselWrap.on('mouseenter', function(){
+                    $(this).children('.pb-arrow-next').fadeIn();
+                });
+                carouselWrap.on('mouseleave', function(){
+                    $(this).children('.pb-arrow-next').fadeOut();
+                });
+            }else if(parameter.arrowtype == 'none'){
+                carouselWrap.children('.pb-arrow-prev').hide();
+                carouselWrap.children('.pb-arrow-next').hide();
+            }
+        },
+        init: function(carouselWrap , parameter){
+            this.carouselWrap = carouselWrap;
+            this.parameter = parameter;
+            if(this.parameter.type == 'updown') this.carouselWrap.attr('type','updown');
+            this.arrow(this.carouselWrap, this.parameter);
+            var autoplay = (typeof this.parameter.autoplay === 'boolean') ? this.parameter.autoplay : true;
+            this.click(this.carouselWrap, this.parameter);
+            if(autoplay) this.autoPlay(this.carouselWrap, this.parameter);
+        }
+    }
+    carousel.fn.init.prototype = carousel.fn;
+    window.carousel = carousel;
+}(typeof window !== 'undefined' ? window : this ,jQuery)); */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* 
@@ -176,7 +573,7 @@ for (var i = 0; i < buttons1.length; i++) {
  */
 
 function FreshTime() {
-    var endtime = new Date("2019/6/26,16:26:5"); //结束时间
+    var endtime = new Date("2019/6/28,16:26:5"); //结束时间
     var nowtime = new Date(); //当前时间
     var lefttime = parseInt((endtime.getTime() - nowtime.getTime()) / 1000);
     d = parseInt(lefttime / 3600 / 24);
@@ -242,8 +639,8 @@ top.onclick = function () {
         }
     }, 10);
 };
- */
 
+ */
 
 
 
@@ -259,9 +656,9 @@ var tabLi2 = tabBottom.getElementsByClassName("tab");
 
 for (var i = 0; i < tabLi1.length; i++) {
     tabLi1[i].index = i;
-   
-    tabLi1[i].onmousemove = function() { 
-         
+
+    tabLi1[i].onmousemove = function () {
+
         for (var i = 0; i < tabLi1.length; i++) {
             tabLi1[i].className = '';
             tabLi2[i].style.display = "none";
@@ -279,7 +676,28 @@ for (var i = 0; i < tabLi1.length; i++) {
 
 
 
+/* 
+*  图片懒加载功能的实现
+*/
 
+// 获取元素
+/* var imgLoad = document.querySelectorAll("img");
+var lenLoad = img.length;
+// 存储图片的加载位置
+var nLoad = 0;
+
+// 获取图片的可视区域
+var heightLoad = document.documentElement.clientHeight;
+var topLoad = document.body.scrollTop || document.documentElement.scrollTop;
+for(var i=nLoad;i<lenLoad;i++){
+    if(imgLoad[i].offsetTop< heightLoad + top){
+        if(imgLoad[i].getAttribute("src")==""){
+            imgLoad[i].src = imgLoad[i].getAttribute("data-src");
+        }
+        nLoad = i + 1;
+        console.log("第"+nLoad+"张图片"+",n="+nLoad);
+    }
+} */
 
 
 

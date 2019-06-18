@@ -19,8 +19,8 @@
         <div class="container">
             <div class="navTop-left">
                 <ul>
-                    <li> <a href="#" target="_blank">用户登录</a></li>
-                    <li> <a href="#" target="_blank">免费登录</a></li>
+                    <li> <a href="./front/pages/register.html" target="_blank">用户注册</a></li>
+                    <li> <a href="./front/pages/login.html" target="_blank">免费登录</a></li>
                     <li>
                         <a href="https://graph.qq.com/oauth2.0/show?which=Login&display=pc&response_type=code&client_id=100279011&redirect_uri=http://club.qqku.com/index.do&state=8e64151568c38e81139df56325eee7fc&scope=get_user_info"
                             target="_blank">
@@ -39,9 +39,9 @@
             </div>
             <div class="navTop-right">
                 <ul>
-                    <li><a href="#" target="_blank" title="将本站设为首页">设为首页</a></li>
-                    <li><a href="#" target="_blank" title="加入收藏，方便下次打开">加入收藏</a></li>
-                    <li><a href="#" target="_blank" title="联系我帮你解答">遇到购物问题？联系我></a></a></li>
+                    <li><a href="#" target="_blank" title="当前状态" id="userStatus">未登录</a></li>
+                    <li><a href="#" target="_blank" title="注销" id="userLogout"></a></li>
+                    <li><a href="#" target="_blank" title="联系我帮你解答">遇到购物问题？联系我></a></li>
                     <li><a href="#" target="_blank" title="乐购信息">我的乐购
                             <ul class="li4">
                                 <li>我的订单</li>
@@ -61,7 +61,7 @@
     <div class="headNav clearfix">
         <div class="container">
             <div class="headNav-left">
-                <img src="./img/1_01.gif" alt="网络出了会问题" title="购物导航" />
+                <img src="./img/1_01.gif" data-src="./img/1_01.gif" alt="网络出了会问题" title="购物导航" />
             </div>
             <div class="headNav-center">
                 <div class="search">
@@ -376,13 +376,13 @@
                 <!-- main-banner-center部分 -->
                 <div class="main-banner-center" id="main-banner-center">
                     <div class="list1" id="list1" >
-                        <img src="./img/2_05.jpg" alt="1"/>
-                        <img src="./img/2_01.jpg" alt="1" />
-                        <img src="./img/2_02.jpg" alt="2" />
-                        <img src="./img/2_03.jpg" alt="3" />
-                        <img src="./img/2_04.jpg" alt="4" />
-                        <img src="./img/2_05.jpg" alt="5" />
-                        <img src="./img/2_01.jpg" alt="5" />
+                        <img src="./img/2_05.jpg" alt="1" data-src="./img/2_05.jpg"/>
+                        <img src="./img/2_01.jpg" alt="1" data-src="./img/2_01.jpg"/>
+                        <img src="./img/2_02.jpg" alt="2" data-src="./img/2_02.jpg"/>
+                        <img src="./img/2_03.jpg" alt="3" data-src="./img/2_03.jpg"/>
+                        <img src="./img/2_04.jpg" alt="4" data-src="./img/2_04.jpg"/>
+                        <img src="./img/2_05.jpg" alt="5" data-src="./img/2_05.jpg"/>
+                        <img src="./img/2_01.jpg" alt="5" data-src="./img/2_01.jpg"/>
                     </div>
                     <div class="buttons1" id="buttons1">
                         <span index="1" class="on"></span>
@@ -393,19 +393,79 @@
                     </div>
                     <a href="javascript:;" id="prev1" class="arrow1">&lt;</a>
                     <a href="javascript:;" id="next1" class="arrow1">&gt;</a>
+
+                    <!-- <div id="list1" class="list1">
+                        <img src="./img/2_05.jpg" alt="5" />
+                        <img src="./img/2_01.jpg" alt="1" />
+                        <img src="./img/2_02.jpg" alt="2" />
+                        <img src="./img/2_03.jpg" alt="3" />
+                        <img src="./img/2_04.jpg" alt="4" />
+                        <img src="./img/2_05.jpg" alt="5" />
+                        <img src="./img/2_01.jpg" alt="1" />
+                    </div>
+                    <div id="pointsDiv">
+                        <span index="1" class="on"></span>
+                        <span index="2"></span>
+                        <span index="3"></span>
+                        <span index="4"></span>
+                        <span index="5"></span>
+                    </div>
+                    <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+                    <a href="javascript:;" id="next" class="arrow">&gt;</a> -->
+
+
+<!-- 
+                    <div class="pb-carouselWarp demo1">
+                        <ul class="pb-carousel">
+                            <li class="pb-this"><img src="./img/2_01.jpg" alt="" /></li>
+                            <li><img src="./img/2_02.jpg" alt="" /></li>
+                            <li><img src="./img/2_03.jpg" alt="" /></li>
+                            <li><img src="./img/2_04.jpg" alt="" /></li>
+                            <li><img src="./img/2_05.jpg" alt="" /></li>
+                        </ul>
+                        <ul class="pb-carousel-ind">
+                            <li class="pb-this"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <button class="pb-arrow pb-arrow-prev"></button>
+                        <button class="pb-arrow pb-arrow-next" id="aa"></button>
+                    </div> -->
+
+
+
+                    <!--  
+                    <div class="pic">
+                            <div class="picImg"><img src="./img/2_01.jpg"  alt=""/></div>
+                            <div class="picImg"><img src="./img/2_02.jpg"  alt=""/></div>
+                            <div class="picImg"><img src="./img/2_03.jpg"  alt=""/></div>
+                            <div class="picImg"><img src="./img/2_04.jpg"  alt=""/></div>
+                            <div class="picImg"><img src="./img/2_05.jpg"  alt=""/></div>
+                        </div>
+                        <ul class="tabs">
+                            <li class="bg"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <div class="btn btn1">&lt;</div>
+                        <div class="btn btn2">&gt;</div> -->
                 </div>
 
                 <div class="main-banner-right">
                     <div class="main-banner-rightOne">
                         <p>“亲亲，喜欢我们吗”</p>
                         <p>分享给身边的朋友一起抢优惠</p>
-                            <ul>
-                                <li><i class="iconfont icon-tianjia2"></i></li>
-                                <li><i class="iconfont icon-weibo1"></i></li>
-                                <li><i class="iconfont icon-qqkongjian"></i></li>
-                                <li><i class="iconfont icon-weixin2"></i></li>
-                                <li><i class="iconfont icon-qq"></i></li>
-                            </ul>
+                        <ul>
+                            <li><i class="iconfont icon-tianjia2"></i></li>
+                            <li><i class="iconfont icon-weibo1"></i></li>
+                            <li><i class="iconfont icon-qqkongjian"></i></li>
+                            <li><i class="iconfont icon-weixin2"></i></li>
+                            <li><i class="iconfont icon-qq"></i></li>
+                        </ul>
                     </div>
                     <div class="main-banner-rightTwo">
                         <p>实时销量榜</p>
@@ -421,7 +481,7 @@
             <!-- main-mess1部分 -->
             <div class="main-mess1">
                 <div class="main-mess1-one">
-                    <span>欢迎光临乐物优购返利商城 http://477681069.qqku.com/ &nbsp;&nbsp;&nbsp;&nbsp;  提示：超级单品和好物推荐可以进入购物详情页</span>
+                    <span>欢迎光临乐物优购返利商城 &nbsp;&nbsp;&nbsp;&nbsp; 提示：超级单品和好物推荐可以进入购物详情页，其它的为mock数据</span>
                 </div>
                 <div class="main-mess1-two">
                     <span>注册会员，既优惠又可以哦！买的东西全是商铺正品，请放心购买！！不买可以收藏下本站哦！谢谢光临！亲们，请重新注册帐号哦~~</span>
@@ -436,10 +496,10 @@
                     <li>
                         <p>超级单品</p>
                         <p>
-                           <span>限时</span>
-                           <span>限量</span>
-                           <span>品质</span>
-                           <span>超值</span>
+                            <span>限时</span>
+                            <span>限量</span>
+                            <span>品质</span>
+                            <span>超值</span>
                         </p>
                         <p>
                             <i class="iconfont icon-ai254"></i>
@@ -450,7 +510,8 @@
                         </p>
                     </li>
                     <li>
-                        <img src="http://omsproductionimg.yangkeduo.com/images/2017-09-15/5551e7fd201a22a25d48549155907de0.jpeg"/>
+                        <img
+                            src="http://omsproductionimg.yangkeduo.com/images/2017-09-15/5551e7fd201a22a25d48549155907de0.jpeg" />
                         <p class="rush-go1">洁丽雅儿童毛巾</p>
                         <p class="rush-go2">
                             <span class="rush-go4">￥2480</span>
@@ -458,7 +519,8 @@
                         </p>
                     </li>
                     <li>
-                        <img src="http://omsproductionimg.yangkeduo.com/images/2017-05-31/3432e4f0fe1effc4abca85d11a085fc2.jpeg"/>
+                        <img
+                            src="http://omsproductionimg.yangkeduo.com/images/2017-05-31/3432e4f0fe1effc4abca85d11a085fc2.jpeg" />
                         <p class="rush-go1">金号纯棉毛巾</p>
                         <p class="rush-go2">
                             <span class="rush-go4">￥2890</span>
@@ -466,7 +528,8 @@
                         </p>
                     </li>
                     <li>
-                        <img src="https://t00img.yangkeduo.com/goods/images/2019-04-07/0cfde9d7-368e-403d-baa3-15ed55854998.jpg"/>
+                        <img
+                            src="https://t00img.yangkeduo.com/goods/images/2019-04-07/0cfde9d7-368e-403d-baa3-15ed55854998.jpg" />
                         <p class="rush-go1">洁丽雅纯棉小毛巾</p>
                         <p class="rush-go2">
                             <span class="rush-go4">￥2380</span>
@@ -474,7 +537,8 @@
                         </p>
                     </li>
                     <li>
-                        <img src="http://omsproductionimg.yangkeduo.com/images/2017-08-15/7bc0b1dfdebba8824356efbe1588da0a.jpeg"/>
+                        <img
+                            src="http://omsproductionimg.yangkeduo.com/images/2017-08-15/7bc0b1dfdebba8824356efbe1588da0a.jpeg" />
                         <p class="rush-go1">洁丽雅竹纤维毛巾</p>
                         <p class="rush-go2">
                             <span class="rush-go4">￥5990</span>
@@ -487,7 +551,7 @@
 
 
             <!-- share 分享部分 -->
-           <!--  <div class="share1" id="share1">
+            <!--  <div class="share1" id="share1">
                 <div class="share2" id="share2">
                 </div>
             </div> -->
@@ -495,7 +559,7 @@
 
             <!-- returnTop 返回顶部 -->
             <div class="returnTop" id="returnTop">
-                <img src="./img/2_09.jpg" alt="返回顶部" title="返回顶部"/>
+                <img src="./img/2_09.jpg" alt="返回顶部" title="返回顶部" />
                 <!-- <p>返回顶部</p> -->
             </div>
 
@@ -510,31 +574,31 @@
             <div class="main-PreferredBrand">
                 <div class="PreferredBrand1">
                     <ul>
-                        <li><img src="./img/3_01.jpg" alt=""/></li>
-                        <li><img src="./img/3_02.jpg" alt=""/></li>
-                        <li><img src="./img/3_03.jpg" alt=""/></li>
+                        <li><img src="./img/3_01.jpg" alt=""  data-src="./img/3_01.jpg"/></li>
+                        <li><img src="./img/3_02.jpg" alt="" data-src="./img/3_02.jpg"/></li>
+                        <li><img src="./img/3_03.jpg" alt="" data-src="./img/3_03.jpg"/></li>
                     </ul>
                 </div>
                 <dic class="PreferredBrand2">
                     <ul>
-                        <li><img src="./img/4_01.jpg" alt=""/></li>
-                        <li><img src="./img/4_02.jpg" alt=""/></li>
-                        <li><img src="./img/4_03.jpg" alt=""/></li>
-                        <li><img src="./img/4_04.jpg" alt=""/></li>
-                        <li><img src="./img/4_05.jpg" alt=""/></li>
-                        <li><img src="./img/4_06.jpg" alt=""/></li>
-                        <li><img src="./img/4_07.jpg" alt=""/></li>
-                        <li><img src="./img/4_08.jpg" alt=""/></li>
-                        <li><img src="./img/4_09.jpg" alt=""/></li>
-                        <li><img src="./img/4_10.jpg" alt=""/></li>
-                        <li><img src="./img/4_11.jpg" alt=""/></li>
-                        <li><img src="./img/4_12.jpg" alt=""/></li>
-                        <li><img src="./img/4_13.jpg" alt=""/></li>
-                        <li><img src="./img/4_14.jpg" alt=""/></li>
-                        <li><img src="./img/4_15.jpg" alt=""/></li>
-                        <li><img src="./img/4_08.jpg" alt=""/></li>
-                        <li><img src="./img/4_10.jpg" alt=""/></li>
-                        <li><img src="./img/4_06.jpg" alt=""/></li>
+                        <li><img src="./img/4_01.jpg" alt=""  data-src="./img/4_01.jpg"/></li>
+                        <li><img src="./img/4_02.jpg" alt="" data-src="./img/4_02.jpg"/></li>
+                        <li><img src="./img/4_03.jpg" alt="" data-src="./img/4_03.jpg"/></li>
+                        <li><img src="./img/4_04.jpg" alt="" data-src="./img/4_04.jpg"/></li>
+                        <li><img src="./img/4_05.jpg" alt="" data-src="./img/4_05.jpg"/></li>
+                        <li><img src="./img/4_06.jpg" alt="" data-src="./img/4_06.jpg"/></li>
+                        <li><img src="./img/4_07.jpg" alt="" data-src="./img/4_07.jpg"/></li>
+                        <li><img src="./img/4_08.jpg" alt="" data-src="./img/4_08.jpg"/></li>
+                        <li><img src="./img/4_09.jpg" alt="" data-src="./img/4_09.jpg"/></li>
+                        <li><img src="./img/4_10.jpg" alt="" data-src="./img/4_10.jpg"/></li>
+                        <li><img src="./img/4_11.jpg" alt="" data-src="./img/4_11.jpg"/></li>
+                        <li><img src="./img/4_12.jpg" alt="" data-src="./img/4_12.jpg"/></li>
+                        <li><img src="./img/4_13.jpg" alt="" data-src="./img/4_13.jpg"/></li>
+                        <li><img src="./img/4_14.jpg" alt="" data-src="./img/4_14.jpg"/></li>
+                        <li><img src="./img/4_15.jpg" alt="" data-src="./img/4_15.jpg"/></li>
+                        <li><img src="./img/4_08.jpg" alt="" data-src="./img/4_08.jpg"/></li>
+                        <li><img src="./img/4_10.jpg" alt="" data-src="./img/4_10.jpg"/></li>
+                        <li><img src="./img/4_06.jpg" alt="" data-src="./img/4_06.jpg"/></li>
                     </ul>
                 </dic>
             </div>
@@ -561,192 +625,192 @@
                     <section class="tab">
                         <ul>
                             <li>
-                               <img src="./img/5_01.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_01.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_02.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_02.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_03.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_03.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_04.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_04.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_05.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_05.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_06.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_06.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_07.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_07.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_08.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_08.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_09.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_09.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_10.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_10.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_11.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_11.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_12.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
-                            </li>
-                        </ul>
-                    </section>
-                    <section class="tab">
-                        <ul>
-                            <li>
-                                <img src="./img/5_13.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
-                            </li>
-                            <li>
-                                <img src="./img/5_14.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
-                            </li>
-                            <li>
-                                <img src="./img/5_15.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
-                            </li>
-                            <li>
-                                <img src="./img/5_16.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
-                            </li>
-                            <li>
-                                <img src="./img/5_17.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
-                            </li>
-                            <li>
-                                <img src="./img/5_18.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
-                            </li>
-                            <li>
-                                <img src="./img/5_19.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
-                            </li>
-                            <li>
-                                <img src="./img/5_20.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
-                            </li>
-                            <li>
-                                <img src="./img/5_21.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
-                            </li>
-                            <li>
-                                <img src="./img/5_22.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
-                            </li>
-                            <li>
-                                <img src="./img/5_23.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
-                            </li>
-                            <li>
-                                <img src="./img/5_24.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_12.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                         </ul>
                     </section>
                     <section class="tab">
                         <ul>
                             <li>
-                                <img src="./img/5_25.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_13.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_26.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_14.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_27.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_15.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_28.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_16.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_29.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_17.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_30.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_18.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_31.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_19.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_32.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_20.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_33.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_21.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_34.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_22.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_35.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_23.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                             <li>
-                                <img src="./img/5_36.jpg" alt=""/>
-                               <p>Oppo Reno 6 128G 星云紫</p> 
-                               <p>￥2799</p>
+                                <img src="./img/5_24.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="tab">
+                        <ul>
+                            <li>
+                                <img src="./img/5_25.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_26.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_27.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_28.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_29.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_30.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_31.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_32.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_33.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_34.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_35.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
+                            </li>
+                            <li>
+                                <img src="./img/5_36.jpg" alt="" />
+                                <p>Oppo Reno 6 128G 星云紫</p>
+                                <p>￥2799</p>
                             </li>
                         </ul>
                     </section>
@@ -765,6 +829,15 @@
             <!-- main-CharacteristicRecommendation部分 -->
             <div class="main-CharacteristicRecommendation">
                 <ul>
+                    <li>
+                        <img
+                            src="http://omsproductionimg.yangkeduo.com/images/2017-09-15/5551e7fd201a22a25d48549155907de0.jpeg" />
+                        <p class="crli1">3条装包邮 金号纯棉深色大格毛巾</p>
+                        <p class="crli2">￥2290</p>
+                    </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                     <li></li>
                     <li></li>
                     <li></li>
@@ -796,16 +869,96 @@
     <!-- footer部分 -->
     <div class="footer">
         <div class="container">
-            <div class="footer-Top"></div>
-
-
-
-
+            <!-- footer-top 部分  -->
+            <div class="footer-Top">
+                <ul>
+                    <li>
+                        <p><i class="iconfont icon-tianmaozhengpinbaozhang"></i></p>
+                        <p>正品保障</p>
+                        <p>正品行货 放心选购</p>
+                    </li>
+                    <li>
+                        <p><i class="iconfont icon-man88yuanbaoyou"></i></p>
+                        <p>满88包邮</p>
+                        <p>满88元 免运费</p>
+                    </li>
+                    <li>
+                        <p><i class="iconfont icon-shouhouwuyou"></i></p>
+                        <p>售后无忧</p>
+                        <p>7天无理由退货</p>
+                    </li>
+                    <li>
+                        <p> <i class="iconfont icon-ai253"></i></p>
+                        <p>准时送达</p>
+                        <p>收货时间由你做主</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- footer-center部分 -->
+            <div class="footer-center">
+                <ul>
+                    <li>
+                        <p>物流配送</p>
+                        <ul>
+                            <li>配送查询</li>
+                            <li>配送服务</li>
+                            <li>配送费用</li>
+                            <li>配送时效</li>
+                            <li>签收与验货</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>支付与账户</p>
+                        <ul>
+                            <li>货到付款</li>
+                            <li>在线支付</li>
+                            <li>分期付款</li>
+                            <li>门店支付</li>
+                            <li>发票制度</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>售后服务</p>
+                        <ul>
+                            <li>退换货服务</li>
+                            <li>退款说明</li>
+                            <li>专业维修</li>
+                            <li>延保服务</li>
+                            <li>家电维修</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>会员专区</p>
+                        <ul>
+                            <li>会员介绍</li>
+                            <li>优惠卷说明</li>
+                            <li>美豆说明</li>
+                            <li>商品评价</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>购物帮助</p>
+                        <ul>
+                            <li>购物保障</li>
+                            <li>购物流程</li>
+                            <li>促销优惠</li>
+                            <li>焦点问题</li>
+                            <li>联系我们</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- footer-bottom 部分 -->
+            <div class="footer-bottom">
+                <p>Copyright&nbsp; 乐物优购网上超市 2016-2019, All rights Reserved</p>
+            </div>
         </div>
     </div>
 
 
 </body>
 <script src="./front/js/index.js"></script>
-
+<script src="./lib/jquery/dist/jquery.min.js"></script>
+<script src="./lib/jquery/dist/jquery.js"></script>
+<script src="./lib/ajax.js"></script>
 </html>

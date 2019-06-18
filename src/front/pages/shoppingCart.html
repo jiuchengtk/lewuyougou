@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车页面</title>
+    <link href="../css/shoppingCart.css" rel="stylesheet" />
+    <link href="../css/normalize.css" rel="stylesheet" />
+    <link href="../css/normalize.css" rel="stylesheet" />
+    <link href="../css/iconfont.css" rel="stylesheet" />
+</head>
+
+<body>
+
+
+    <!-- navTop部分 -->
+    <div class="navTop clearfix">
+        <div class="container">
+            <div class="navTop-left">
+                <ul>
+                    <li> <a href="./register.html" target="_blank">用户注册</a></li>
+                    <li> <a href="./login.html" target="_blank">免费登录</a></li>
+                    <li>
+                        <a href="https://graph.qq.com/oauth2.0/show?which=Login&display=pc&response_type=code&client_id=100279011&redirect_uri=http://club.qqku.com/index.do&state=8e64151568c38e81139df56325eee7fc&scope=get_user_info"
+                            target="_blank">
+                            <i class="iconfont icon-qq2"></i>
+                            <span>qq登录</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://api.weibo.com/oauth2/authorize?client_id=3619957868&redirect_uri=http%3A%2F%2Fclub.qqku.com%2F%3Ftab%3Dwblogin%26op%3Dback%26r%3Dhttp%253A%252F%252F477681069.qqku.com%26h%3D477681069&response_type=code"
+                            target="_blank">
+                            <i class="iconfont icon-weibo2"></i>
+                            <span>微博登录</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navTop-right">
+                <ul>
+                    <li><a href="#" target="_blank" title="当前状态" id="userStatus">未登录</a></li>
+                    <li><a href="#" target="_blank" title="注销" id="userLogout"></a></li>
+                    <li><a href="#" target="_blank" title="联系我帮你解答">遇到购物问题？联系我></a></li>
+                    <li><a href="#" target="_blank" title="乐购信息">我的乐购
+                            <ul class="li4">
+                                <li>我的订单</li>
+                                <li>我的收藏</li>
+                                <li>抵用卷</li>
+                                <li>账户设置</li>
+                            </ul>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- headNav部分 -->
+    <div class="headNav clearfix">
+        <div class="container">
+            <div class="headNav-left">
+                <img src="../../img/1_01.gif" data-src="../../img/1_01.gif" alt="网络出了会问题" title="购物导航" />
+            </div>
+            <div class="headNav-center">
+                <div class="search">
+                    <input type="text" placeholder="好宝贝，等你搜" id="text1" name="text1" />
+                    <button type="text" id="btn1">搜索</button>
+                    <ul id="list">
+                        <!-- <li></li>
+                            <li></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="headNav-right">
+                <dl>
+                    <dt></dt>
+                </dl>
+                <dl>
+                    <dt></dt>
+                </dl>
+                <dl>
+                    <dt></dt>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- banerNav部分 -->
+    <div class="banerNav clearfix">
+        <div class="container">
+            <ul class="banerNav-ul">
+                <li><a href="#" target="_blank"><i class="iconfont icon-daohang"></i>网站首页</a></li>
+                <li><a href="#" target="_blank">领劵优惠直播</a></li>
+                <li><a href="#" target="_blank">实时跑量</a></li>
+                <li><a href="#" target="_blank">超级人气榜</a></li>
+                <li><a href="#" target="_blank">9块9包邮</a></li>
+                <li><a href="#" target="_blank">20元封顶</a></li>
+                <li><a href="#" target="_blank">钜惠卷</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <!-- shoppingCart 部分 -->
+    <div class="shoppingCart clearfix">
+        <div class="container">
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- footer部分 -->
+    <div class="footer">
+        <div class="container">
+            <!-- footer-top 部分  -->
+            <div class="footer-Top">
+                <ul>
+                    <li>
+                        <p><i class="iconfont icon-tianmaozhengpinbaozhang"></i></p>
+                        <p>正品保障</p>
+                        <p>正品行货 放心选购</p>
+                    </li>
+                    <li>
+                        <p><i class="iconfont icon-man88yuanbaoyou"></i></p>
+                        <p>满88包邮</p>
+                        <p>满88元 免运费</p>
+                    </li>
+                    <li>
+                        <p><i class="iconfont icon-shouhouwuyou"></i></p>
+                        <p>售后无忧</p>
+                        <p>7天无理由退货</p>
+                    </li>
+                    <li>
+                        <p> <i class="iconfont icon-ai253"></i></p>
+                        <p>准时送达</p>
+                        <p>收货时间由你做主</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- footer-center部分 -->
+            <div class="footer-center">
+                <ul>
+                    <li>
+                        <p>物流配送</p>
+                        <ul>
+                            <li>配送查询</li>
+                            <li>配送服务</li>
+                            <li>配送费用</li>
+                            <li>配送时效</li>
+                            <li>签收与验货</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>支付与账户</p>
+                        <ul>
+                            <li>货到付款</li>
+                            <li>在线支付</li>
+                            <li>分期付款</li>
+                            <li>门店支付</li>
+                            <li>发票制度</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>售后服务</p>
+                        <ul>
+                            <li>退换货服务</li>
+                            <li>退款说明</li>
+                            <li>专业维修</li>
+                            <li>延保服务</li>
+                            <li>家电维修</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>会员专区</p>
+                        <ul>
+                            <li>会员介绍</li>
+                            <li>优惠卷说明</li>
+                            <li>美豆说明</li>
+                            <li>商品评价</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>购物帮助</p>
+                        <ul>
+                            <li>购物保障</li>
+                            <li>购物流程</li>
+                            <li>促销优惠</li>
+                            <li>焦点问题</li>
+                            <li>联系我们</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- footer-bottom 部分 -->
+            <div class="footer-bottom">
+                <p>Copyright&nbsp; 乐物优购网上超市 2016-2019, All rights Reserved</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+<script src="../js/shoppingCart.js"></script>
+<script src="../../lib/jquery/dist/jquery.min.js"></script>
+<script src="../../lib/ajax.js"></script>
+<script src="../../lib/goods.json"></script>
+
+</html>

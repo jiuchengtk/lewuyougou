@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册页面</title>
+    <link href="../css/register.css" rel="stylesheet">
+    <link href="../css/normalize.css" rel="stylesheet"/>
+    <link href="../css/reset.css" rel="stylesheet"/>
+    <link href="../css/iconfont.css" rel="stylesheet"/>
+</head>
+<body>
+    
+
+     <!-- top部分 -->
+    <div class="top clearfix">
+        <div class="container">
+            <div class="top-left">
+                <img src="../../img/1_01.gif" alt="网络出了会问题" />
+                <p>欢迎注册</p>
+            </div>
+            <div class="top-right">
+                <p>您好，欢迎光临乐物优购！</p>
+                <a href="./login.html" target="_blank">请登录</a>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- main 部分 -->
+    <div class="main clearfix">
+        <div class="container">
+            <div class="register">
+                <div class="register-title">
+                    <p>乐物优购注册</p>
+                </div>
+                <div class="register-main">
+                    <ul>
+                        <li>
+                             <span>用户名</span>
+                             <input type="text" id="username" name="username" />
+                             <div id="info1"></div> 
+                        </li>
+                        <li>
+                             <span>设置密码</span>
+                             <input type="password" id="password" name="password"/>
+                             <div id="info2"></div> 
+                        </li>
+                        <li>
+                            <span>确认密码</span>
+                            <input type="password" id="password2" name="password"/>
+                             <div id="info3"></div> 
+                        </li>
+                        <li>
+                            <span>手机号</span>
+                            <input type="text" id="telephone" name="telephone"/>
+                             <div id="info4"></div> 
+                        </li>
+                        <li>
+                            <span>短信验证码 </span>
+                            <input type="text" id="mes" name="mes"/>
+                             <button id="btn1">点击发送短信</button>
+                             <div id="info5"></div> 
+                        </li>
+                    </ul>
+                    <p>点击注册，表示您同意乐物优购 <span>&lt;&lt;服务协议及隐私声明&gt;&gt;</span></p>
+                    <button id="btn2" class="btn2">同意协议并注册</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <!-- footer 部分 -->
+    <div class="footer clearfix">
+        <div class="container">
+            <div class="footer-message">
+                    <p>
+                        <span>沪ICP备16050468号</span>
+                        <span>沪B2-20170039</span>
+                        <span>营业执照</span>
+                    </p>
+                    <p>Copyright&nbsp; 乐物优购网上超市 2016-2019, All rights Reserved</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../../lib/jquery/dist/jquery.min.js"></script>
+<script src="../js/register.js"></script>
+</html>
