@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>乐物优购</title>
+    <script src="./goods.json"></script>
     <link href="./front/css/index.css" rel="stylesheet" />
     <link href="./front/css/normalize.css" rel="stylesheet" />
     <link href="./front/css/reset.css" rel="stylesheet" />
@@ -491,8 +492,8 @@
 
 
             <!-- main-rush部分 -->
-            <div class="main-rush">
-                <ul>
+            <div class="main-rush" id="main-rush">
+                <ul class="main-ruP">
                     <li>
                         <p>超级单品</p>
                         <p>
@@ -509,7 +510,9 @@
                             <span id="leftTime"></span>
                         </p>
                     </li>
-                    <li>
+                </ul>
+                <ul class="main-rushUl" id="main-rushUl"></ul>
+                   <!--  <li class="rush-go">
                         <img
                             src="http://omsproductionimg.yangkeduo.com/images/2017-09-15/5551e7fd201a22a25d48549155907de0.jpeg" />
                         <p class="rush-go1">洁丽雅儿童毛巾</p>
@@ -517,8 +520,8 @@
                             <span class="rush-go4">￥2480</span>
                             <span class="rush-go3"><del>4800</del></span>
                         </p>
-                    </li>
-                    <li>
+                    </li> -->
+                    <!-- <li>
                         <img
                             src="http://omsproductionimg.yangkeduo.com/images/2017-05-31/3432e4f0fe1effc4abca85d11a085fc2.jpeg" />
                         <p class="rush-go1">金号纯棉毛巾</p>
@@ -544,8 +547,8 @@
                             <span class="rush-go4">￥5990</span>
                             <span class="rush-go3"><del>8800</del></span>
                         </p>
-                    </li>
-                </ul>
+                    </li> -->
+                <!-- </ul> -->
             </div>
 
 
@@ -828,13 +831,14 @@
 
             <!-- main-CharacteristicRecommendation部分 -->
             <div class="main-CharacteristicRecommendation">
-                <ul>
-                    <li>
-                        <img
+                <ul class="mchrul">
+                    <!-- <li class="crLi">
+                        <img class="crImg"
                             src="http://omsproductionimg.yangkeduo.com/images/2017-09-15/5551e7fd201a22a25d48549155907de0.jpeg" />
                         <p class="crli1">3条装包邮 金号纯棉深色大格毛巾</p>
-                        <p class="crli2">￥2290</p>
-                    </li>
+                        <p class="crli2">惊喜价 <span class="crspan">￥2290</span></p>
+                    </li> -->
+                    <!-- <li></li>
                     <li></li>
                     <li></li>
                     <li></li>
@@ -852,8 +856,7 @@
                     <li></li>
                     <li></li>
                     <li></li>
-                    <li></li>
-                    <li></li>
+                    <li></li> -->
                 </ul>
             </div>
 
@@ -957,8 +960,60 @@
 
 
 </body>
+<!-- <script src="./lib/jquery/dist/jquery.min.js"></script> -->
+<!-- <script src="./lib/jquery/dist/jquery.js"></script> -->
 <script src="./front/js/index.js"></script>
-<script src="./lib/jquery/dist/jquery.min.js"></script>
-<script src="./lib/jquery/dist/jquery.js"></script>
-<script src="./lib/ajax.js"></script>
+<!-- <script src="./lib/ajax.js"></script> -->
+<!-- <script>
+
+$(function(){
+
+
+    // let data = goods.msg;
+
+$.ajax({
+
+type:"GET",
+url:"./goods.json",
+dataType:"json",
+success:function(data){
+    
+     console.log(data);
+   let crDiv = document.getElementsByClassName("main-CharacteristicRecommendation");
+   let crUl = document.getElementsByClassName("crUl"); 
+
+   for(let i=0;i<21;i++){
+
+    let crLis = document.createElement("li");
+    crUl.appendChild(crLis);
+    crLis.className = "crLi";
+
+    let crImg = document.createElement("img");
+    crLis.appendChild(crImg);
+    crImg.className = "crImg";
+    $(".crImg").text(data.image_url);
+
+    let crp1 = document.createElement("p");
+    crLis.appendChild(crp1);
+    crp1.className = "crli1";
+    $(".crli1").text(data.goods_name);
+
+    let crp2 = document.createElement("p");
+    crLis.appendChild(crp2);
+    crp2.className = "crli2";
+    crp2.innerHTML = "惊喜价";
+
+    let crSpan = document.createElement("span");
+    crp2.appendChild(crSpan);
+    crSpan.className = "crspan";
+    $(".crSpan").text(data.normal_price);
+
+   } 
+
+}
+}) 
+
+})
+
+</script> -->
 </html>

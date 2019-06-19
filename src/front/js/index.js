@@ -71,8 +71,8 @@ function fn(data) {
 
 
 /* 
-*  用户状态判断  
-*/
+ *  用户状态判断  
+ */
 
 let usernameLo = localStorage.getItem("username");
 let passwordLo = localStorage.getItem("password");
@@ -80,17 +80,17 @@ let passwordLo = localStorage.getItem("password");
 let userStatus = document.getElementById("userStatus");
 let userLogout = document.getElementById("userLogout");
 
-if(usernameLo !== null &&  passwordLo !== null){
+if (usernameLo !== null && passwordLo !== null) {
 
-    userStatus.innerHTML = usernameLo+"已登录";
+    userStatus.innerHTML = usernameLo + "已登录";
     userLogout.innerHTML = "点击注销";
     userLogout.style.color = "#27c0ab";
 
-    userLogout.onclick = function(){
+    userLogout.onclick = function () {
 
         confirm("确认要注销吗？");
 
-        localStorage.removeItem("username");    
+        localStorage.removeItem("username");
         localStorage.removeItem("password");
 
         alert("注销成功！");
@@ -406,10 +406,10 @@ $(function(){
 );
  */
 
-  /* 
-  *  jQuery 实现轮播图的封装
-  */
-  /* (function(window, factory){
+/* 
+ *  jQuery 实现轮播图的封装
+ */
+/* (function(window, factory){
 
     var carousel = function(carouselWrap, parameter){
         return new carousel.fn.init(carouselWrap , parameter);
@@ -677,8 +677,8 @@ for (var i = 0; i < tabLi1.length; i++) {
 
 
 /* 
-*  图片懒加载功能的实现
-*/
+ *  图片懒加载功能的实现
+ */
 
 // 获取元素
 /* var imgLoad = document.querySelectorAll("img");
@@ -697,12 +697,169 @@ for(var i=nLoad;i<lenLoad;i++){
         nLoad = i + 1;
         console.log("第"+nLoad+"张图片"+",n="+nLoad);
     }
-} */
+} *
 
 
 
 
 
+/* 
+*  超级单品秒杀模块  请求json 数据
+*/
+
+
+let dataJson = goods.msg;
+let mainRush = document.getElementById("main-rush");
+let mainRushUl = document.getElementById("main-rushUl");
+
+let itemId = dataJson["goods_id"];
+// console.log(itemId);
+
+for (var i = 0; i < 4; i++) {
+
+    let goodsTemp = Math.floor(Math.random() * 10);
+
+    let itemId = dataJson[goodsTemp]["goods_id"];
+    // console.log(itemId);
+
+    let lis = document.createElement("li");
+    // console.log(mainRushUl);
+    mainRushUl.appendChild(lis);
+    //  mainRushUl.appendChild(lis);
+    //  mainRush.appendChild(mainRushUl);
+
+    let img = document.createElement("img");
+    lis.appendChild(img);
+    img.src = dataJson[goodsTemp]["image_url"];
+    // console.log(img.src);
+
+    let p1 = document.createElement("p");
+    p1.className = "rush-go1";
+    lis.appendChild(p1);
+    p1.innerHTML = dataJson[goodsTemp]["short_name"];
+    // console.log(p1.text);
+
+
+    let p2 = document.createElement("p");
+    p2.className = "rush-go2";
+    lis.appendChild(p2);
+
+    let span1 = document.createElement("span");
+    span1.className = "rush-go4";
+    p2.appendChild(span1);
+    span1.innerHTML = dataJson[goodsTemp]["group_price"];
+
+    let span2 = document.createElement("span");
+    span2.className = "rush-go3";
+    let del = document.createElement("del");
+    span2.appendChild(del);
+    p2.appendChild(del);
+    del.innerHTML = dataJson[goodsTemp]["market_price"];
+}
+
+
+
+
+
+
+
+
+/* 
+ *  好物推荐模块  请求json 数据
+ */
+
+/* $.ajax({
+
+    type: "GET",
+    url: "./goods.json",
+    dataType: "json",
+    success: function (data) {
+        console.log(data);
+        let crDiv = document.getElementsByClassName("main-CharacteristicRecommendation");
+        let crUl = document.getElementsByClassName("crUl");
+
+        for (let i = 0; i < 21; i++) {
+
+            let crLis = document.createElement("li");
+            crUl.appendChild(crLis);
+            crLis.className = "crLi";
+
+            let crImg = document.createElement("img");
+            crLis.appendChild(crImg);
+            crImg.className = "crImg";
+            $(".crImg").text(data.image_url);
+
+            let crp1 = document.createElement("p");
+            crLis.appendChild(crp1);
+            crp1.className = "crli1";
+            $(".crli1").text(data.goods_name);
+
+            let crp2 = document.createElement("p");
+            crLis.appendChild(crp2);
+            crp2.className = "crli2";
+            crp2.innerHTML = "惊喜价";
+
+            let crSpan = document.createElement("span");
+            crp2.appendChild(crSpan);
+            crSpan.className = "crspan";
+            $(".crSpan").text(data.normal_price);
+
+        }
+
+    }
+
+})
+ */
+
+
+let goodJson = goods.msg;
+let crDiv = document.getElementsByClassName("main-CharacteristicRecommendation");
+let mchrul = document.getElementsByClassName("mchrul");
+
+for (let i = 0; i < 20; i++) {
+
+  
+    /* let goodsTemp = setTimeout(function(){
+        goodsTemp =  Math.floor(Math.random() * 10);
+    },1000); */
+
+    let goodsTemp = Math.floor(Math.random() * 10);
+    let itemId = dataJson[goodsTemp]["goods_id"];
+    // console.log(itemId);
+
+    // let crUl = document.getElementsByClassName("crUl");
+    let crLis = document.createElement("li");
+    // mchrul.appendChild(crLis);
+    crLis.className = "crLi";
+    console.log(crLis);
+
+    let crImg = document.createElement("img");
+    crLis.appendChild(crImg);
+    crImg.className = "crImg";
+    // $(".crImg").text(data.image_url);
+    crImg.src = dataJson[goodsTemp]["image_url"];
+
+
+    let crp1 = document.createElement("p");
+    crLis.appendChild(crp1);
+    crp1.className = "crli1";
+    // $(".crli1").text(data.goods_name);
+    crp1.innerHTML = dataJson[goodsTemp]["goods_name"];
+
+
+    let crp2 = document.createElement("p");
+    crLis.appendChild(crp2);
+    crp2.className = "crli2";
+    crp2.innerHTML = "惊喜价";
+
+
+    let crSpan = document.createElement("span");
+    crp2.appendChild(crSpan);
+    crSpan.className = "crspan";
+    // $(".crSpan").text(data.normal_price);
+    crSpan.innerHTML = dataJson[goodsTemp]["normal_price"];
+
+}
 
 
 

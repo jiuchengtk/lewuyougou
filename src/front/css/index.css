@@ -863,7 +863,7 @@ a {
     background-color: #ee3c43;
     margin-top: 20px;
 }
-.main-rush>ul>li {
+.main-rush>.main-ruP>li {
     width: 200px;
     height: 160px;
     background-color: #fff;
@@ -872,43 +872,43 @@ a {
     margin-top: 10px;
     margin-left: 18px;
 }
-.main-rush>ul>li:nth-child(1) {
+.main-rush>.main-ruP>li:nth-child(1) {
     width: 240px;
     margin-left: 20px;
     background-color: #ee3c43;
 }
-.main-rush>ul>li:nth-child(1)>p:nth-child(1) {
+.main-rush>.main-ruP>li:nth-child(1)>p:nth-child(1) {
     color: #fff;
     font-size: 20px;
     margin: 12px 10px 10px 10px;
 }
-.main-rush>ul>li:nth-child(1)>p:nth-child(2) {
+.main-rush>.main-ruP>li:nth-child(1)>p:nth-child(2) {
     color: #fcd8da;
     font-size: 14px;
     margin: 12px 10px 10px 10px;
 }
-.main-rush>ul>li:nth-child(1)>p:nth-child(2)>span:nth-child(1) {
+.main-rush>.main-ruP>li:nth-child(1)>p:nth-child(2)>span:nth-child(1) {
     padding-bottom: 5px;
     border-bottom: 3px solid #fff;
 }
-.main-rush>ul>li:nth-child(1)>p:nth-child(3) {
+.main-rush>.main-ruP>li:nth-child(1)>p:nth-child(3) {
     margin-top: 24px;
 }
-.main-rush>ul>li:nth-child(1)>p:nth-child(3)>i {
+.main-rush>.main-ruP>li:nth-child(1)>p:nth-child(3)>i {
     font-size: 24px;
     color: #fff;
     margin: 10px 10px 10px 10px;
 }
-.main-rush>ul>li:nth-child(1)>p:nth-child(3)>span {
+.main-rush>.main-ruP>li:nth-child(1)>p:nth-child(3)>span {
     font-size: 14px;
     color: #fff;
 }
-.main-rush>ul>li:nth-child(1)>p:nth-child(4) {
+.main-rush>.main-ruP>li:nth-child(1)>p:nth-child(4) {
     color: #fff;
     margin-top: 20px;
     font-size: 18px;
 } 
-.main-rush>ul>li>img {
+/* .main-rush>ul>li>img {
     width: 156px;
     height: 100px;
     margin-left: 30px;
@@ -922,12 +922,10 @@ a {
     text-overflow: ellipsis;
     width: 200px;
     height: 10px;
-    /* margin-left: 32px; */
     text-align: center;
 }
 .main-rush>ul>li>.rush-go2 {
     margin-top: 18px;
-    /* margin-left: 32px; */
     text-align: center;
 }
 .main-rush>ul>li>.rush-go2>.rush-go4 {
@@ -942,7 +940,68 @@ a {
 .main-rush>ul>li:nth-child(3):hover,
 .main-rush>ul>li:nth-child(4):hover {
     box-shadow: 0  15px  30x  rgba(0,0,0,0.1);
+} */
+
+/* .main-rush>.rush-go>img {
+    width: 156px;
+    height: 100px;
+    margin-left: 30px;
+    margin-top: 6px;
+    text-align: center;
+} */
+
+.main-rushUl {
+    width: 800px;
+    height: 160px;
+    /* background-color: pink; */
+    float: left;
+    margin: 10px 10px 10px 68px;
 }
+.main-rushUl>li {
+    width: 180px;
+    height: 160px;
+    float: left;
+    /* background-color: purple; */
+    background-color: #fff;
+    margin-left: 14px;
+}
+.main-rushUl>li:hover {
+    border: 1px solid #333;
+}
+.main-rushUl>li>img {
+    width: 154px;
+    height: 100px;
+    margin-left: 12px;
+    margin-top: 6px;
+    text-align: center;
+}
+.main-rushUl>li>p:nth-child(2) {
+    font-size: 12px;
+    color: #333;
+    margin-top: 8px;
+    text-overflow: ellipsis;
+    /* width: 200px; */
+    height: 10px;
+    text-align: center;
+} 
+.main-rushUl>li>p:nth-child(3) {
+    margin-top: 18px;
+    text-align: center;
+}
+.main-rushUl>li>p:nth-child(3)>span:nth-child(1) {
+    color: #e50129;
+    font-size: 14px;
+    margin-right: 10px;
+}
+.main-rushUl>li>p:nth-child(3)>span:nth-child(2)> {
+    color: #999;
+    font-size: 12px;
+    /* display: inline-block; */
+}
+
+
+
+
 
 
 
@@ -1191,14 +1250,15 @@ a {
     float: left;
     width: 246px;
     height: 300px;
-    margin-top: 30px;
-    margin-left: 44px;
+    /* margin-top: 30px;
+    margin-left: 44px; */
     background-color: #fff;
+    margin: 15px 20px;
 }
-.main-CharacteristicRecommendation>ul>li:hover {
-    /* border: 1px solid #e93b43; */
-    /* box-shadow: 0 15px 30px rgba(0,0,0,0.1); */
-}
+/* .main-CharacteristicRecommendation>ul>li:hover {
+    border: 1px solid #e93b43;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+} */
 .main-CharacteristicRecommendation>ul>li>img {
     width: 200px;
     height: 180px;
@@ -1212,12 +1272,14 @@ a {
     margin: 12px 10px 10px 10px;    
 }
 .main-CharacteristicRecommendation>ul>li>.crli2 {
-    font-size: 18px;
+    font-size: 16px;
     color: #e93b44;
     text-align: center;
     margin: 24px 10px 10px 10px;
 }
-
+.main-CharacteristicRecommendation>ul>li>.crli2>span {
+    font-size: 22px;
+}
 
 
 
