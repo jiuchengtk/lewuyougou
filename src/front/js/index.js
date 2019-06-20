@@ -725,6 +725,7 @@ for (var i = 0; i < 4; i++) {
     let lis = document.createElement("li");
     // console.log(mainRushUl);
     mainRushUl.appendChild(lis);
+    lis.className = "crLi";
     //  mainRushUl.appendChild(lis);
     //  mainRush.appendChild(mainRushUl);
 
@@ -747,18 +748,38 @@ for (var i = 0; i < 4; i++) {
     let span1 = document.createElement("span");
     span1.className = "rush-go4";
     p2.appendChild(span1);
-    span1.innerHTML = dataJson[goodsTemp]["group_price"];
+    span1.innerHTML = "￥"+dataJson[goodsTemp]["group_price"];
 
     let span2 = document.createElement("span");
     span2.className = "rush-go3";
     let del = document.createElement("del");
     span2.appendChild(del);
     p2.appendChild(del);
-    del.innerHTML = dataJson[goodsTemp]["market_price"];
+    del.innerHTML = "￥"+dataJson[goodsTemp]["market_price"];
 }
 
 
 
+
+
+/* 
+*  点击商品后进入到指定的商品详情页
+*/
+
+let clickLi = document.getElementsByClassName("crLi");
+let goosMsg = goods.msg;
+
+clickLi.onclick = function(){
+
+    
+    let goosId = this.goosMsg["goods_id"];
+    console.log(goosId);
+
+    localStorage.setItem("goosId",goosId);
+
+
+
+}
 
 
 
@@ -814,11 +835,12 @@ for (var i = 0; i < 4; i++) {
 
 let goodJson = goods.msg;
 let crDiv = document.getElementsByClassName("main-CharacteristicRecommendation");
-let mchrul = document.getElementsByClassName("mchrul");
+
 
 for (let i = 0; i < 20; i++) {
 
-  
+    let mchrul = document.getElementsByClassName("mchrul")[0];
+
     /* let goodsTemp = setTimeout(function(){
         goodsTemp =  Math.floor(Math.random() * 10);
     },1000); */
@@ -829,7 +851,7 @@ for (let i = 0; i < 20; i++) {
 
     // let crUl = document.getElementsByClassName("crUl");
     let crLis = document.createElement("li");
-    // mchrul.appendChild(crLis);
+    mchrul.appendChild(crLis);
     crLis.className = "crLi";
     console.log(crLis);
 
@@ -857,7 +879,13 @@ for (let i = 0; i < 20; i++) {
     crp2.appendChild(crSpan);
     crSpan.className = "crspan";
     // $(".crSpan").text(data.normal_price);
-    crSpan.innerHTML = dataJson[goodsTemp]["normal_price"];
+    crSpan.innerHTML = "￥"+dataJson[goodsTemp]["normal_price"];
+
+    
+    let crp4 = document.createElement("p");
+    crLis.appendChild(crp4);
+    crp4.className = "crli3";
+    crp4.innerHTML = "加入购物车";
 
 }
 

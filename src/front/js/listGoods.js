@@ -1,4 +1,3 @@
-
 /* 
  *  用户状态判断  
  */
@@ -94,3 +93,108 @@ function fn(data) {
         ul.style.display = "none";
     }
 }
+
+
+
+
+/* 
+ *  创建商品详情列表，请求json 数据
+ */
+
+let dataJson = goods.msg;
+let gl = document.getElementsByClassName("goodsList4");
+
+let itemId = dataJson["goods_id"];
+
+for (var i = 0; i < 32; i++) {
+
+    let glu = document.getElementsByClassName("goodsL4Ul")[0];
+
+    let goodsTemp = Math.floor(Math.random() * 12);
+    let itemId = dataJson[goodsTemp]["goods_id"];
+    console.log(itemId);
+
+    let lis = document.createElement("li");
+    glu.appendChild(lis);
+    lis.className = "goosL4Li";
+
+    let img = document.createElement("img");
+    lis.appendChild(img);
+    // img.src = "";
+    img.src = dataJson[goodsTemp]["image_url"];
+
+    let p1 = document.createElement("p");
+    lis.appendChild(p1);
+    p1.className = "goodsL4p1";
+    p1.innerHTML = "￥ "+dataJson[goodsTemp]["group_price"];
+
+    let p2 = document.createElement("p");
+    lis.appendChild(p2);
+    p2.className = "goodsL4p2";
+    p2.innerHTML = dataJson[goodsTemp]["goods_name"];
+
+    let p3 = document.createElement("p");
+    lis.appendChild(p3);
+    p3.className = "goodsL4p3";
+    p3.innerHTML = dataJson[goodsTemp]["sales_tip"];
+
+    let p4 = document.createElement("p");
+    lis.appendChild(p4);
+    p4.className = "goodsL4p4";
+    p4.innerHTML = "加入购物车";
+
+}
+
+
+
+
+/* 
+ *  图片懒加载功能的实现
+ */
+
+/* window.onload = function(){
+var img2 = document.querySelectorAll("img");
+var len2 = img2.length;
+// 存储图片的加载位置
+var n2 = 0;
+
+// 获取图片的可视区域
+var height = document.documentElement.clientHeight;
+var top = document.body.scrollTop || document.documentElement.scrollTop;
+for (var i = n2; i < len2; i++) {
+    if (img2[i].offsetTop < height + top) {
+        if (img2[i].getAttribute("src") == "") {
+            img2[i].src = img2[i].getAttribute("dataSrc");
+        }
+        n2 = i + 1;
+        console.log("第" + n2 + "张图片" + ",n=" + n2);
+    }
+}
+}
+ */
+
+
+/* 
+* 函数防抖与节流功能的实现
+*/
+
+/* function throttle(fn,mustRun = 500) {
+    const timer = null;
+    let previous = null;
+    return function () {
+      const now = new Date();
+      const context = this;
+      const args = arguments;
+      if(!previous){
+        previous = now;
+      }
+      const remaining = now -previous;
+      if(mustRun && remaining >= mustRun){
+        fn.apply(context,args);
+        previous = now;
+      }
+    }
+  } */
+//调用函数
+/* window.onload=checkImgs;
+window.onscroll = throttle(checkImgs); */
