@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="../lib/jquery/dist/jquery.min.js"></script>
+<script>
+    /* var arr = new Array(9); arr[0]=1; arr[2]=2; 
+console.log(arr.length);
+ */
+
+
+    //var a = 1; var b = a * 0; var a; if (b == b) { console.log(b * 2 + "2"- 0 + 4); } else { console.log(!b * 2 + "2"- 0 + 4); }
+
+    /*  var arr = new Array(9); arr[0]=1; arr[2]=2; 
+     console.log(arr.length); */
+
+    //var date = new Date("2006/5/14/");	var y = date.getFullYear();	var m = date.getMonth();	var d = date.getDate();	document.write( y + " " + m + " " + d );
+
+    //var  arr = [3,4,5]; var  res = arr.unshift(1,2); console.log(res); 
+
+    //function fn(){    console.log("world")};fn();var fn = "hello";
+
+    //var num1=1;   function testf1(){  num1=2;    var num1;  alert(num1); } function testf2(){  alert(num1); }   testf1();   testf2();
+
+
+    //  var obj = "";
+
+    // var num1=3,num2=5; alert(num1>num2?num2:num1);
+
+
+    /*     function filter() {
+
+            // 获取输入框的内容inputContent
+            var inputContent = input.value;
+
+            // 多个敏感词，以数组的形式展现
+            var arrMg = ["fuck", "tmd", "去你大爷的"];
+
+            var showContent = inputContent;
+
+            for (var i = 0; i < arrMg.length; i++) {
+                // 创建一个正则表达式
+                var r = new RegExp(arrMg[i], "ig");
+                showContent = showContent.replace(r, "*");
+            }
+           
+            showInput.value = showContent;
+        }
+     */
+
+
+    $.ajax({
+        async: true,
+        cache: false,
+        url: "test.json",
+        dataType : "json",
+        type: "GET",
+        success: function (result) {
+            var result = eval('(' + result + ')');
+            if (result != undefined && result.length > 0) {
+               
+                result.getCookie();
+
+
+            }
+        }
+    })
+</script>
+
+</html>

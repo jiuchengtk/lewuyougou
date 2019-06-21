@@ -183,3 +183,21 @@ details1.onmousemove = function (env) {
     // console.log(imgBig.style.left, imgBig.style.top);
 
 };
+
+
+
+
+
+/*
+*  购物车功能的实现
+*/
+
+
+let dlt7 = document.getElementById("dlt7");
+
+dlt7.onclick = function(){
+    console.log(123);
+    
+    alert("成功添加到购物车中");
+
+}

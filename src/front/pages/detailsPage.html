@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +42,7 @@
                     <li><a href="#" target="_blank" title="当前状态" id="userStatus">未登录</a></li>
                     <li><a href="#" target="_blank" title="注销" id="userLogout"></a></li>
                     <li><a href="#" target="_blank" title="联系我帮你解答">遇到购物问题？联系我></a></li>
-                    <li><a href="#" target="_blank" title="乐购信息">我的乐购
+                    <li><a href="../pages/shoppingCart.html" target="_blank" title="购物车" id="myCart">我的购物车
                             <ul class="li4">
                                 <li>我的订单</li>
                                 <li>我的收藏</li>
@@ -94,13 +95,13 @@
     <div class="banerNav clearfix">
         <div class="container">
             <ul class="banerNav-ul">
-                <li><a href="#" target="_blank"><i class="iconfont icon-daohang"></i>网站首页</a></li>
-                <li><a href="#" target="_blank">领劵优惠直播</a></li>
-                <li><a href="#" target="_blank">实时跑量</a></li>
-                <li><a href="#" target="_blank">超级人气榜</a></li>
-                <li><a href="#" target="_blank">9块9包邮</a></li>
-                <li><a href="#" target="_blank">20元封顶</a></li>
-                <li><a href="#" target="_blank">钜惠卷</a></li>
+                <li><a href="../../index.html" target="_blank"><i class="iconfont icon-daohang"></i>网站首页</a></li>
+                <li><a href="../pages/activePages.html" target="_blank">领劵优惠直播</a></li>
+                <li><a href="../pages/activePages.html" target="_blank">实时跑量</a></li>
+                <li><a href="../pages/listGoods.html" target="_blank">超级人气榜</a></li>
+                <li><a href="../pages/listGoods.html" target="_blank">9块9包邮</a></li>
+                <li><a href="../pages/listGoods.html" target="_blank">20元封顶</a></li>
+                <li><a href="../pages/activePages.html" target="_blank">钜惠卷</a></li>
             </ul>
         </div>
     </div>
@@ -115,21 +116,21 @@
                 <span><i class="iconfont icon-jiantou5"></i></span>
                 <span>商品详情</span>
                 <span><i class="iconfont icon-jiantou5"></i></span>
-                <span>金号纯棉毛巾</span>
+                <span id="spanD1"></span>
             </div>
 
             <div class="details-center">
                 <div class="detailsCenter-one" id="detailsCenter-one">
-                    <img src="../../img/5_02.jpg" alt="" />
+                    <img src="../../img/5_02.jpg" alt="" id="dcoSmall" />
                     <div class="mask"></div>
                 </div>
                 <div class="detailsCenter-oneBig" id="detailsCenter-oneBig">
-                    <img src="../../img/5_02.jpg" alt=""/>
+                    <img src="../../img/5_02.jpg" alt="" id="dcoBig" />
                 </div>
                 <div class="detailsCenter-two">
-                    <p class="dlt1">让宝宝爱上洗脸48g/条</p>
-                    <p class="dlt2">洁丽雅儿童洗脸毛巾【五条装】纯棉小毛巾全棉柔软舒适可爱小面巾</p>
-                    <p class="dlt3">现价 ￥3500</p>
+                    <p class="dlt1" id="dlt1">让宝宝爱上洗脸48g/条</p>
+                    <p class="dlt2" id="dlt2">洁丽雅儿童洗脸毛巾【五条装】纯棉小毛巾全棉柔软舒适可爱小面巾</p>
+                    <p class="dlt3" id="dlt3">现价 ￥3500</p>
                     <p class="dlt4">
                         <i class="iconfont icon-ai254"></i>
                         <span>距离活动结束仅剩</span>
@@ -137,8 +138,8 @@
                     <p class="dlt5">
                         <span id="leftTime"></span>
                     </p>
-                    <p class="dlt6">已拼10万+件</p>
-                    <p class="dlt7">加入购物车</p>
+                    <p class="dlt6" id="dlt6">已拼10万+件</p>
+                    <p class="dlt7" id="dlt7">加入购物车</p>
                 </div>
                 <div class="detailsCenter-three">
                     <p>优选推荐</p>
@@ -251,9 +252,110 @@
 
 
 </body>
-<script src="../js/detailsPage.js"></script>
 <script src="../../lib/jquery/dist/jquery.min.js"></script>
 <script src="../../lib/ajax.js"></script>
-<script src="../../lib/goods.json"></script>
+<script src="../js/detailsPage.js"></script>
+<!-- <script src="../../lib/goods.json"></script> -->
+<script>
+    $(function () {
+        //获取url中的参数
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg); //匹配目标参数
+            if (r != null) return unescape(r[2]);
+            return null; //返回参数值
+        }
+
+        //接收URL中传入的id
+        var id = getUrlParam('id');
+        console.log(id);
+
+        /* 
+        *  存入cookie的封装函数
+        */
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 61000));
+            var expires = "expires=" + d.toUTCString(); 
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+
+        $.ajax({
+            type: 'get',
+            url: '../../goods2.json',
+            dataType: 'json',
+            success: function (data) {
+                // console.log(data.msg.length);
+
+
+                for (let i = 0; i < data.msg.length; i++) {
+
+                    if (data.msg[i]["goods_id"] == id) {
+
+
+                        // 获取购物车按钮，将数据存入cookie
+                        let dlt7 = document.getElementById("dlt7");
+                        dlt7.onclick = function () {
+
+                            alert("成功添加到购物车中");
+                            dlt7.style.cursor = "pointer";
+
+                            setCookie(i,data.msg[i]["goods_id"],7);
+                            console.log(111);
+                        }
+
+
+                        //  超级单品秒杀模块
+                        let dcoSmall = document.getElementById("dcoSmall");
+                        let dcoBig = document.getElementById("dcoBig");
+
+                        let spanD1 = document.getElementById("spanD1");
+                        let dlt1 = document.getElementById("dlt1");
+                        let dlt2 = document.getElementById("dlt2");
+                        let dlt3 = document.getElementById("dlt3");
+                        let dlt6 = document.getElementById("dlt6");
+
+                        dcoSmall.src = data.msg[i]["image_url"];
+                        // console.log(data.msg[i]["image_url"]);
+                        dcoBig.src = data.msg[i]["image_url"];
+                        spanD1.innerHTML = data.msg[i]["goods_name"];
+                        dlt1.innerHTML = data.msg[i]["short_name"];
+                        dlt2.innerHTML = data.msg[i]["goods_name"];
+                        dlt3.innerHTML = "￥" + data.msg[i]["normal_price"];
+                        dlt6.innerHTML = data.msg[i]["sales_tip"];
+
+
+
+                        //  好物推荐模块
+                        let crImg = document.getElementById("crImg");
+                        let crp1 = document.getElementById("crp1");
+                        let crSpan = document.getElementById("crSpan");
+
+                        crImg.src = data.msg[i]["image_url"];
+                        crp1.innerHTML = data.msg[i]["short_name"];
+                        crSpan.innerHTML = data.msg[i]["normal_price"];
+
+
+
+                        //  商品列表模块
+                        let imgLg = document.getElementById("imgLg");
+                        let p1Lg = document.getElementById("p1Lg");
+                        let p2Lg = document.getElementById("p2Lg");
+                        let p3Lg = document.getElementById("p3Lg");
+                        let p4Lg = document.getElementById("p4Lg");
+
+                        imgLg.src = data.msg[i]["image_url"];
+                        p1Lg.innerHTML = "￥" + data.msg[i]["group_price"];
+                        p2Lg.innerHTML = data.msg[i]["goods_name"];
+                        p3Lg.innerHTML = data.msg[i]["sales_tip"];
+
+                    }
+                }
+
+            }
+        })
+    })
+</script>
 
 </html>

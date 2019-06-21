@@ -114,33 +114,44 @@ for (var i = 0; i < 32; i++) {
     let itemId = dataJson[goodsTemp]["goods_id"];
     console.log(itemId);
 
-    let lis = document.createElement("li");
-    glu.appendChild(lis);
-    lis.className = "goosL4Li";
+    let lis2 = document.createElement("li");
+    glu.appendChild(lis2);
+    lis2.className = "goosL4Li";
+    lis2.onclick = function(){
+        console.log("test");
+        // window.open(`./front/pages/detailsPage.html?id=${dataJson[goodsTemp]["goods_id"]}`);
+        window.open(`../pages/detailsPage.html?id=${dataJson[goodsTemp]["goods_id"]}`);
+    }
+
 
     let img = document.createElement("img");
-    lis.appendChild(img);
+    lis2.appendChild(img);
     // img.src = "";
     img.src = dataJson[goodsTemp]["image_url"];
+    img.id = "imgLg";
 
     let p1 = document.createElement("p");
-    lis.appendChild(p1);
+    lis2.appendChild(p1);
     p1.className = "goodsL4p1";
+    p1.id = "p1Lg";
     p1.innerHTML = "￥ "+dataJson[goodsTemp]["group_price"];
 
     let p2 = document.createElement("p");
-    lis.appendChild(p2);
+    lis2.appendChild(p2);
     p2.className = "goodsL4p2";
+    p2.id = "p2Lg";
     p2.innerHTML = dataJson[goodsTemp]["goods_name"];
 
     let p3 = document.createElement("p");
-    lis.appendChild(p3);
+    lis2.appendChild(p3);
     p3.className = "goodsL4p3";
+    p3.id = "p3Lg";
     p3.innerHTML = dataJson[goodsTemp]["sales_tip"];
 
     let p4 = document.createElement("p");
-    lis.appendChild(p4);
+    lis2.appendChild(p4);
     p4.className = "goodsL4p4";
+    p4.id = "p4Lg";
     p4.innerHTML = "加入购物车";
 
 }
@@ -178,7 +189,7 @@ for (var i = n2; i < len2; i++) {
 * 函数防抖与节流功能的实现
 */
 
-/* function throttle(fn,mustRun = 500) {
+function throttle(fn,mustRun = 500) {
     const timer = null;
     let previous = null;
     return function () {
@@ -194,7 +205,7 @@ for (var i = n2; i < len2; i++) {
         previous = now;
       }
     }
-  } */
+  }
 //调用函数
 /* window.onload=checkImgs;
 window.onscroll = throttle(checkImgs); */

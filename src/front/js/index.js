@@ -724,6 +724,12 @@ for (var i = 0; i < 4; i++) {
 
     let lis = document.createElement("li");
     // console.log(mainRushUl);
+    lis.onclick=function(){
+    console.log('test');
+
+    window.open(`./front/pages/detailsPage.html?id=${dataJson[goodsTemp]["goods_id"]}`);
+    }
+
     mainRushUl.appendChild(lis);
     lis.className = "crLi";
     //  mainRushUl.appendChild(lis);
@@ -766,7 +772,7 @@ for (var i = 0; i < 4; i++) {
 *  点击商品后进入到指定的商品详情页
 */
 
-let clickLi = document.getElementsByClassName("crLi");
+let clickLi = document.getElementsByClassName("crLi")[0];
 let goosMsg = goods.msg;
 
 clickLi.onclick = function(){
@@ -777,10 +783,31 @@ clickLi.onclick = function(){
 
     localStorage.setItem("goosId",goosId);
 
-
-
 }
 
+
+
+//请求json数据拼接字符串，并在URL传参数id跳转
+/* $(function(){
+    $.ajax({
+        type:"get",
+        url:"data/data.json",
+        dataType:"json",
+        success:function(res){
+            var str = "<ul class='con_ul'>";
+            $.each(res.books, function(idx,val) {
+                str +="<li class=\"sec_li\"><a href='goodsDetail.html?booksId="+val.id+"' class='lp_li_a'><div class='lp_li_imgWrap'><img src='"+val.imgUrl+"'/></div><p class='lp_li_name'>"
+                        +val.title+"</p><p class='lp_li_price'>"
+                        +'￥'+val.price+"</p></a><li>";
+            });
+            str += "</ul>";
+            $('.content').append(str);
+        },error:function(){
+            alert(error)
+        }
+    });
+})
+ */
 
 
 
@@ -832,6 +859,9 @@ clickLi.onclick = function(){
 })
  */
 
+/* 
+*  好物推荐模块
+*/
 
 let goodJson = goods.msg;
 let crDiv = document.getElementsByClassName("main-CharacteristicRecommendation");
@@ -853,11 +883,16 @@ for (let i = 0; i < 20; i++) {
     let crLis = document.createElement("li");
     mchrul.appendChild(crLis);
     crLis.className = "crLi";
-    console.log(crLis);
+    // console.log(crLis);
+    crLis.onclick = function(){
+        window.open(`./front/pages/detailsPage.html?id=${dataJson[goodsTemp]["goods_id"]}`);
+    }
+
 
     let crImg = document.createElement("img");
     crLis.appendChild(crImg);
     crImg.className = "crImg";
+    crImg.id = "crImg";
     // $(".crImg").text(data.image_url);
     crImg.src = dataJson[goodsTemp]["image_url"];
 
@@ -865,6 +900,7 @@ for (let i = 0; i < 20; i++) {
     let crp1 = document.createElement("p");
     crLis.appendChild(crp1);
     crp1.className = "crli1";
+    crp1.id = "crp1";
     // $(".crli1").text(data.goods_name);
     crp1.innerHTML = dataJson[goodsTemp]["goods_name"];
 
@@ -872,12 +908,14 @@ for (let i = 0; i < 20; i++) {
     let crp2 = document.createElement("p");
     crLis.appendChild(crp2);
     crp2.className = "crli2";
+    crp2.id = "crp2";
     crp2.innerHTML = "惊喜价";
 
 
     let crSpan = document.createElement("span");
     crp2.appendChild(crSpan);
     crSpan.className = "crspan";
+    crSpan.id = "crSpan";
     // $(".crSpan").text(data.normal_price);
     crSpan.innerHTML = "￥"+dataJson[goodsTemp]["normal_price"];
 
@@ -885,6 +923,7 @@ for (let i = 0; i < 20; i++) {
     let crp4 = document.createElement("p");
     crLis.appendChild(crp4);
     crp4.className = "crli3";
+    crp4.id = "crp4";
     crp4.innerHTML = "加入购物车";
 
 }
